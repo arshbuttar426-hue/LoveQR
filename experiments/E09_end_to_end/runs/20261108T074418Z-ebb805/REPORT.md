@@ -1,0 +1,125 @@
+# E09_end_to_end — End-to-end simulated transfer
+
+- Run: `20261108T074418Z-ebb805`
+- Classification: **OBSERVED (SIMULATED channel) + THEORETICAL (projected screen time)**
+- Evidence source: **SIMULATED / SOFTWARE** (no physical camera)
+- Trials: 64
+- Wall time: 559.86 s
+- Quick mode: False
+
+## Hypothesis
+
+The full pipeline (compression, packetisation, RS, rendering, simulated channel, spatial decode, reassembly) recovers files under clean/mild/harsh channels and moderate frame loss, with a measurable failure limit on a deliberately brutal stress channel.
+
+## Controlled variables
+
+- protocol
+- layout
+- renderer
+- decoder
+- RS settings
+- seed
+
+## Independent variables
+
+- payload type/size
+- channel severity
+- frame-drop probability
+
+## Dependent variables
+
+- transfer success
+- compression ratio
+- frames decoded/dropped
+- BER
+- simulated throughput
+- projected screen throughput
+- CPU/memory
+
+## Procedure
+
+1. Build text and random payloads at several sizes.
+2. Run the complete simulate_transfer pipeline with clean/mild/harsh channels and 0/3% frame loss.
+3. Record success, per-packet RS statistics, errors, timings and resource use.
+4. Separate simulated wall-clock throughput from projected 60 fps screen throughput.
+
+## Processed results
+
+```json
+{
+  "by_channel": {
+    "brutal": {
+      "successes": 0,
+      "trials": 16
+    },
+    "clean": {
+      "successes": 16,
+      "trials": 16
+    },
+    "harsh": {
+      "successes": 16,
+      "trials": 16
+    },
+    "mild": {
+      "successes": 16,
+      "trials": 16
+    }
+  },
+  "by_kind": {
+    "random": {
+      "successes": 24,
+      "trials": 32
+    },
+    "text": {
+      "successes": 24,
+      "trials": 32
+    }
+  },
+  "max_payload_decoded": 6000,
+  "note": "Simulated wall time measures the Python pipeline. Projected screen time = frames / 60 fps; projected net bit rate uses that screen time. Neither is a physical camera measurement.",
+  "success_rate": 0.75,
+  "successes": 48,
+  "trials": 64
+}
+```
+
+Raw measurements: `raw/trials.jsonl` (one JSON object per trial).
+Tabular metrics: `processed/summary.csv`.
+
+## Failures
+
+- None recorded.
+
+## Conclusion
+
+48 of 64 simulated transfers succeeded across channels clean, mild, harsh, brutal at 0%, 3% independent frame loss, with payloads up to 6000 bytes (largest tested: 6000 bytes). Failures occurred under brutal; the per-trial errors name the failing stage (decode, RS, or reassembly). Simulated wall time is a software benchmark, not screen time: the projected 60 fps screen time and projected net bit rate are reported separately for protocol planning.
+
+## Reproduction
+
+```bash
+cd /Users/arshbuttar/OPTICAL_TRANSMISSION_LAB
+python3 -m experiments.run_all --only E09_end_to_end
+```
+
+The run directory is immutable; re-running creates a new run id.
+
+## Environment
+
+```json
+{
+  "cpu_count": 10,
+  "machine": "arm64",
+  "numpy": "2.4.4",
+  "opencv": "4.13.0",
+  "otl_version": "0.1.0",
+  "pillow": "12.2.0",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "processor": "arm",
+  "pytest": "9.0.3",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "simulation_only": true,
+  "timestamp_utc": "2026-11-08T07:53:38.835501+00:00",
+  "zstandard": "0.25.0"
+}
+```

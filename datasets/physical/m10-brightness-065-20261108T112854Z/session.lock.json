@@ -1,0 +1,9 @@
+{
+  "capture_count": 1082,
+  "captures_sha256": "b02dc7d2534920c3bd7ac2ce32fbf1acc835b8789db7e6f3bfd81ef691627926",
+  "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+  "locked_utc": "2026-11-08T11:30:19.372877+00:00",
+  "manifest_sha256": "ebb11a354808b7fa5770b466c58b747bcd16f9a55f19222db429408f0a2c9d6c",
+  "schema": "otl-session-lock/1",
+  "session_id": "m10-brightness-065-20261108T112854Z"
+}

@@ -1,0 +1,27 @@
+{
+  "classification": "BLOCKED \u2014 no physical camera capture available",
+  "conclusion": "BLOCKED: no physical capture session was available. Reason: no session directory under datasets/physical and no --session argument. No decoding accuracy, throughput or latency is reported for a physical link because no physical link was measured. Capture a session with `otl session new`, `otl capture` or `otl session ingest`, then re-run `python3 -m experiments.run_all --only E11_physical --session <dir>`.",
+  "device": null,
+  "evidence_source": "BLOCKED / NO PHYSICAL CAPTURE",
+  "experiment": "E11_physical",
+  "experiment_metadata": {
+    "evidence_source": "BLOCKED / NO PHYSICAL CAPTURE",
+    "note": "No physical result was produced. Nothing in this run is a camera measurement; do not cite it as one.",
+    "problems": [],
+    "session": ""
+  },
+  "failures": [],
+  "n_trials": 1,
+  "run_id": "20261108T083903Z-ed189d",
+  "simulation_only": true,
+  "summary": {
+    "captures": 0,
+    "evidence_source": "BLOCKED / NO PHYSICAL CAPTURE",
+    "note": "No camera images were available. This run is not a simulation of a link and it is not a physical measurement; it records the missing prerequisite.",
+    "problems": [],
+    "reason": "no session directory under datasets/physical and no --session argument",
+    "status": "blocked"
+  },
+  "title": "Physical optical validation (screen \u2192 camera)",
+  "wall_s": 0.00017170900537166744
+}

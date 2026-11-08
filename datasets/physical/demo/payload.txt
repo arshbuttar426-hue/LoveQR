@@ -1,0 +1,6 @@
+OTL physical validation payload
+================================
+This file is the payload for the M9 screen-to-camera demonstration.
+It is rendered as 255 FULL16 frames (one packet) and played by the
+deterministic HTML player. The same decoder that decodes the simulated
+channel decodes every preserved camera image.

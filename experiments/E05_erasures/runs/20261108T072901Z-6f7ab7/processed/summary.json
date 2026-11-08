@@ -1,0 +1,19 @@
+{
+  "classification": "OBSERVED (software ECC) + THEORETICAL (capacity)",
+  "conclusion": "With nsym=32, packets decode with up to 32 lost frames; the smallest failing loss count observed is 33. This matches the theoretical erasure capacity of 32 per RS block because interleaving turns each lost frame into exactly one erasure in every block. Random and burst loss behave the same at equal counts under byte interleaving.",
+  "experiment": "E05_erasures",
+  "failures": [],
+  "n_trials": 46,
+  "run_id": "20261108T072901Z-6f7ab7",
+  "simulation_only": true,
+  "summary": {
+    "capacity_rule": "2*byte_errors + lost_frames <= nsym per RS block",
+    "interleaving": "frame n carries byte n of every block, so a lost frame is one erasure per block",
+    "max_lost_frames_decoded": 32,
+    "nsym": 32,
+    "smallest_failing_loss_count": 33,
+    "theoretical_max_erasures": 32
+  },
+  "title": "Frame loss and Reed-Solomon erasure capacity",
+  "wall_s": 0.515291250005248
+}

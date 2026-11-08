@@ -1,0 +1,35 @@
+{
+  "classification": "OBSERVED (software)",
+  "conclusion": "OTL1 compresses repetitive, textual and structured payloads strongly, leaves incompressible random data at roughly unit ratio, and always round-trips byte-exactly. Because the compressed payload determines the number of packets, compression directly reduces screen time. OTL1 does not claim to beat zlib/zstd on general data; its purpose is a small, deterministic, inspectable instruction stream.",
+  "experiment": "E07_compression",
+  "failures": [],
+  "n_trials": 30,
+  "run_id": "20261108T073316Z-099895",
+  "simulation_only": true,
+  "summary": {
+    "container": "OTL1",
+    "mean_ratio_by_corpus": {
+      "alternating": 44.56538789428814,
+      "csv": 2.0594251698458446,
+      "inverted_text": 18.749059613500844,
+      "json": 17.145679299934454,
+      "random": 1.9135391512947306,
+      "repeat_abcd": 43.729482991253555,
+      "source_code": 25.178021978021977,
+      "sparse_binary": 10.616250923994103,
+      "text": 18.749059613500844,
+      "zeros": 58.50925352597179
+    },
+    "note": "OTL1 is a deterministic, dependency-free dictionary codec designed for the on-screen instruction set; zlib/zstd numbers are references, not part of the protocol.",
+    "opcodes": [
+      "LIT",
+      "REPEAT",
+      "COPY",
+      "INVERT",
+      "SEQUENCE"
+    ],
+    "zstd_available": true
+  },
+  "title": "Shared instruction dictionary (OTL1) compression effectiveness",
+  "wall_s": 0.16863241700048093
+}

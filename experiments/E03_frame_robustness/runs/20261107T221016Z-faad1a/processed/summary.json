@@ -1,0 +1,49 @@
+{
+  "classification": "OBSERVED (SIMULATED channel)",
+  "conclusion": "The clean render decodes every frame. Each degradation has a different failure mode: blur mixes triangle interiors, noise perturbs the per-cell threshold, JPEG creates block artefacts, ambient/brightness shift the histogram, perspective stresses fiducial detection, and vignetting reduces corner contrast. The per-parameter tables show where the CRC success rate falls; these are SIMULATED observations, not physical camera results.",
+  "experiment": "E03_frame_robustness",
+  "failures": [],
+  "n_trials": 40,
+  "run_id": "20261107T221016Z-faad1a",
+  "simulation_only": true,
+  "summary": {
+    "frames_per_level": 4,
+    "parameters": {
+      "ambient": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0
+      },
+      "blur_sigma": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0
+      },
+      "brightness": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0
+      },
+      "gamma": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0
+      },
+      "jpeg_quality": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0
+      },
+      "noise_sigma": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0
+      },
+      "perspective": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0
+      },
+      "vignette": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0
+      }
+    },
+    "success_rule": "frame CRC-16 matches after spatial decode"
+  },
+  "title": "Single-frame decode robustness sweep",
+  "wall_s": 1.5713295000023209
+}

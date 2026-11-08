@@ -1,0 +1,9 @@
+{
+  "capture_count": 15,
+  "captures_sha256": "22cdd3a2561f6284122082a6572b109d41b3eb6ea9ea0d30fdf2ce3d92c0cde9",
+  "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+  "locked_utc": "2026-11-08T10:37:38.897148+00:00",
+  "manifest_sha256": "a0f1d255271e2c9e6d7feec27175541e517c15d144786e8ecf59dc8d4fbcedaa",
+  "schema": "otl-session-lock/1",
+  "session_id": "m9-iphone14-2-20261108T103717Z"
+}

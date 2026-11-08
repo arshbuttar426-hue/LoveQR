@@ -1,0 +1,309 @@
+{
+  "classification": "PHYSICAL (camera capture) + SOFTWARE (decode)",
+  "conclusion": "PHYSICAL / CAMERA CAPTURE. Session m9-iphone14-2-20261108T103717Z from iPhone14,2 (Continuity Camera, 'Arsh Camera') capturing a Apple M5 built-in Liquid Retina (MacBook Air): 1 camera samples, 1 passed the frame CRC (100.0%); 1/255 unique displayed frames (0.4%). Mean cell accuracy 1.000 and bit accuracy 1.000 over 1 unique frames with a display mapping. No complete payload was reassembled from this session. Decode latency 12.31 ms per camera sample, packet decode + reassembly 0.04 ms, decode throughput 81.2 samples/s. All physical numbers come from the preserved camera files; decoding is software. Compare with E01\u2013E10 only through the comparison table, which states the basis of every pair.",
+  "device": {
+    "camera": {
+      "exposure": "auto",
+      "focus": "auto (Continuity Camera)",
+      "format": "PNG via AVFoundation",
+      "fps": 30.0,
+      "iso": "auto",
+      "mode": "still burst",
+      "notes": "exact command: python3 -m otl capture still 1 --out /private/var/folders/7r/8thcpkq94zn87lx_m5q2dl680000gn/T/opencode/probe43 --frames 15 --fps 30 --size 1920x1440",
+      "resolution": "1920x1440",
+      "stabilization": "not applicable (still burst)",
+      "zoom": "1x"
+    },
+    "display": {
+      "brightness": "not measured (macOS default)",
+      "height_px": 1664,
+      "kind": "computer",
+      "model": "Apple M5 built-in Liquid Retina (MacBook Air)",
+      "notes": "Safari frontmost, player_hold.html held on frame 0",
+      "refresh_hz": 60.0,
+      "width_px": 2560
+    },
+    "model": "iPhone14,2 (Continuity Camera, 'Arsh Camera')",
+    "notes": "AVFoundation device index 1",
+    "os": "iOS (version not exposed by AVFoundation)",
+    "serial": ""
+  },
+  "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+  "experiment": "E11_physical",
+  "experiment_metadata": {
+    "capture_settings": {
+      "exposure": "auto",
+      "focus": "auto (Continuity Camera)",
+      "format": "PNG via AVFoundation",
+      "fps": 30.0,
+      "iso": "auto",
+      "mode": "still burst",
+      "notes": "exact command: python3 -m otl capture still 1 --out /private/var/folders/7r/8thcpkq94zn87lx_m5q2dl680000gn/T/opencode/probe43 --frames 15 --fps 30 --size 1920x1440",
+      "resolution": "1920x1440",
+      "stabilization": "not applicable (still burst)",
+      "zoom": "1x"
+    },
+    "capture_source": "camera",
+    "captures": 1,
+    "device": {
+      "camera": "rear camera via Continuity Camera; 1920x1440 at 30 fps",
+      "model": "iPhone14,2 (Continuity Camera, 'Arsh Camera')",
+      "notes": "AVFoundation device index 1",
+      "os": "iOS (version not exposed by AVFoundation)",
+      "serial": ""
+    },
+    "display": {
+      "brightness": "not measured (macOS default)",
+      "height_px": 1664,
+      "kind": "computer",
+      "model": "Apple M5 built-in Liquid Retina (MacBook Air)",
+      "notes": "Safari frontmost, player_hold.html held on frame 0",
+      "refresh_hz": 60.0,
+      "width_px": 2560
+    },
+    "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+    "geometry": {
+      "ambient_lux": null,
+      "angle_deg": null,
+      "distance_mm": null,
+      "hand_held": null,
+      "lighting": "indoor",
+      "notes": "operator hand-positioned the iPhone facing the display; distance, angle and ambient illuminance were not measured"
+    },
+    "note": "Decoding is software; the image bytes are physical camera output.",
+    "session_id": "m9-iphone14-2-20261108T103717Z",
+    "session_notes": "First physical capture that decoded: 15/15 frame CRC, cell accuracy 1.000 after the D22 classifier fix. The displayed frame is p00_f000.png (hold mode).",
+    "session_path": "datasets/physical/m9-iphone14-2-20261108T103717Z",
+    "transmitter": {
+      "attached_utc": "2026-11-08T10:37:23.045636+00:00",
+      "fps": 10.0,
+      "frame_count": 255,
+      "frames_sha256": "207e0af3350f5c0b30ef593c662f0449debef40a079bf37ddd2d965d95cd7348",
+      "hold": true,
+      "payload_name": "payload.txt",
+      "payload_sha256": "829a6e465f0be0a8ae2e5eee9adb783d84591f2bf1813a20153946edce9cab2d",
+      "player_manifest": "display/player_manifest.json",
+      "player_manifest_sha256": "72dfef512833fbaeaa8fbd8b5f481b9f1002603ad448bc68c9bc9cff3f32ec50"
+    }
+  },
+  "failures": [],
+  "n_trials": 1,
+  "run_id": "20261108T110718Z-bf6b16",
+  "simulation_only": false,
+  "summary": {
+    "accuracy": {
+      "bit_accuracy": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0,
+        "n": 1.0,
+        "p50": 1.0,
+        "p95": 1.0,
+        "std": 0.0
+      },
+      "bit_accuracy_mean": 1.0,
+      "bit_accuracy_per_capture_mean": 1.0,
+      "bit_error_rate": 0.0,
+      "cell_accuracy": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0,
+        "n": 1.0,
+        "p50": 1.0,
+        "p95": 1.0,
+        "std": 0.0
+      },
+      "cell_accuracy_mean": 1.0,
+      "cell_accuracy_per_capture_mean": 1.0,
+      "cell_error_rate": 0.0
+    },
+    "capture_settings": {
+      "exposure": "auto",
+      "focus": "auto (Continuity Camera)",
+      "format": "PNG via AVFoundation",
+      "fps": 30.0,
+      "iso": "auto",
+      "mode": "still burst",
+      "notes": "exact command: python3 -m otl capture still 1 --out /private/var/folders/7r/8thcpkq94zn87lx_m5q2dl680000gn/T/opencode/probe43 --frames 15 --fps 30 --size 1920x1440",
+      "resolution": "1920x1440",
+      "stabilization": "not applicable (still burst)",
+      "zoom": "1x"
+    },
+    "capture_source": "camera",
+    "captures": {
+      "attempt_failure_rate": 0.0,
+      "count": 1,
+      "crc_rate": 1.0,
+      "decoded_crc_ok": 1,
+      "detection_failures": 0,
+      "duplicate_files": 14,
+      "error_counts": {},
+      "expected_frames": 255,
+      "files": 15,
+      "frame_delivery_rate": 0.00392156862745098,
+      "frame_index_matches": 1,
+      "frame_loss_rate": 0.996078431372549,
+      "ground_truth_attempts": 1,
+      "ground_truth_frames": 1,
+      "image_files": 15,
+      "media_files": 0,
+      "note": "count is unique image SHA-256 values; files includes byte-identical duplicates from a burst. crc_rate is the fraction of camera samples that decoded with a valid frame CRC; frame_delivery_rate is unique displayed frames / expected packet frames.",
+      "unique_frames": 1
+    },
+    "comparison": [
+      {
+        "basis": "E02 clean simulated channel vs E11 observed captures with known frames",
+        "delta": 0.0,
+        "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+        "metric": "clean-cell accuracy",
+        "observed": 1.0,
+        "simulated": 1.0,
+        "unit": "fraction"
+      },
+      {
+        "basis": "E09 64 simulated trials vs E11 one physical packet; sample sizes differ",
+        "delta": -0.75,
+        "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+        "metric": "file-transfer success",
+        "observed": 0.0,
+        "simulated": 0.75,
+        "unit": "fraction"
+      },
+      {
+        "basis": "E10 software decode mean vs E11 observed-image decode mean (same decoder)",
+        "delta": 5.711260749740177,
+        "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+        "metric": "decode latency",
+        "observed": 12.309666999499314,
+        "simulated": 6.598406249759137,
+        "unit": "ms/frame"
+      },
+      {
+        "basis": "E01 payload arithmetic at 60 fps vs E11 at the observed 10 fps; the rate ratio is mostly the display rate",
+        "delta": null,
+        "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+        "metric": "raw payload bit rate at 60 fps",
+        "observed": null,
+        "simulated": 5280,
+        "unit": "bps"
+      }
+    ],
+    "device": {
+      "camera": "rear camera via Continuity Camera; 1920x1440 at 30 fps",
+      "model": "iPhone14,2 (Continuity Camera, 'Arsh Camera')",
+      "notes": "AVFoundation device index 1",
+      "os": "iOS (version not exposed by AVFoundation)",
+      "serial": ""
+    },
+    "display": {
+      "brightness": "not measured (macOS default)",
+      "height_px": 1664,
+      "kind": "computer",
+      "model": "Apple M5 built-in Liquid Retina (MacBook Air)",
+      "notes": "Safari frontmost, player_hold.html held on frame 0",
+      "refresh_hz": 60.0,
+      "width_px": 2560
+    },
+    "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+    "geometry": {
+      "ambient_lux": null,
+      "angle_deg": null,
+      "distance_mm": null,
+      "hand_held": null,
+      "lighting": "indoor",
+      "notes": "operator hand-positioned the iPhone facing the display; distance, angle and ambient illuminance were not measured"
+    },
+    "latency": {
+      "decode_attempts": 1,
+      "decode_ms": {
+        "max": 12.309666999499314,
+        "mean": 12.309666999499314,
+        "min": 12.309666999499314,
+        "n": 1.0,
+        "p50": 12.309666999499314,
+        "p95": 12.309666999499314,
+        "std": 0.0
+      },
+      "decode_samples_fps": 81.23696603983473,
+      "decode_wall_s": 0.012309666999499314,
+      "packet_decode_ms": 0.04237500252202153,
+      "reassembly_ms": 0.00012500095181167126,
+      "reconstruction_ms": 0.0425000034738332,
+      "resource": {
+        "cpu_percent": 171.6405302997327,
+        "cpu_s": 0.075021,
+        "max_rss_kb": 112752,
+        "rss_kb": 112752,
+        "wall_s": 0.043708208002499305
+      }
+    },
+    "note": "PHYSICAL camera bytes decoded by software. Accuracy is relative to the displayed frame only where the operator recorded an independent frame mapping; video frame identity comes from the OTL header.",
+    "packet_summary": {
+      "corrected_symbols": 0,
+      "erased_frames": 0,
+      "packet_loss_rate": null,
+      "packets_expected": null,
+      "packets_received": 0,
+      "rs_nsym": 32
+    },
+    "packets": [
+      {
+        "decoded": false,
+        "error": {
+          "code": "E_RECONSTRUCT",
+          "component": "protocol",
+          "details": {
+            "block": 0,
+            "cause": {
+              "code": "E_ECC",
+              "component": "ecc",
+              "details": {
+                "erasures": 254,
+                "nsym": 32
+              },
+              "message": "too many erasures",
+              "operation": "decode"
+            },
+            "erasures": 254,
+            "packet_id": 0
+          },
+          "message": "RS block could not be corrected",
+          "operation": "decode_packet"
+        },
+        "frames_present": 1,
+        "packet_id": 0
+      }
+    ],
+    "session_id": "m9-iphone14-2-20261108T103717Z",
+    "status": "measured",
+    "throughput": {
+      "capture_duration_s": null,
+      "capture_fps": 30.0,
+      "compressed": null,
+      "compression_ratio": null,
+      "display_fps_manifest": 10.0,
+      "display_fps_observed": null,
+      "display_fps_used": 10.0,
+      "expected_frames": 255,
+      "frame_delivery_rate": 0.00392156862745098,
+      "frame_loss_rate": 0.996078431372549,
+      "frames_captured": 1,
+      "frames_decoded": 1,
+      "net_bps": null,
+      "note": "All rates are reported only when the complete payload was reassembled and its SHA-256 matched. raw_channel_bps and raw_payload_bps are gross rates at the observed display rate; rs_goodput_bps is the packet capacity after RS(255,223); net_bps is the SHA-verified application payload. Repeated camera samples of one displayed frame are counted once.",
+      "original_bytes": 0,
+      "packet_duration_s": 25.5,
+      "payload_bytes": 0,
+      "payload_error": null,
+      "payload_sha256": null,
+      "payload_success": false,
+      "raw_channel_bps": null,
+      "raw_payload_bps": null,
+      "rs_goodput_bps": null,
+      "unique_frames": 1,
+      "wire_bytes": 0
+    }
+  },
+  "title": "Physical optical validation (screen \u2192 camera)",
+  "wall_s": 0.04910712499986403
+}

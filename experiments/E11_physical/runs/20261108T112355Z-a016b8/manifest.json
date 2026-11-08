@@ -1,0 +1,252 @@
+{
+  "artifacts": {},
+  "classification": "PHYSICAL (camera capture) + SOFTWARE (decode)",
+  "config_defaults": {
+    "camera": {
+      "assume_cropped": true,
+      "display_fps": 60.0,
+      "exposure_us": 8000.0,
+      "fps": 30.0,
+      "height": 1350,
+      "random_phase": true,
+      "readout_direction": 1,
+      "row_time_us": 20.0,
+      "width": 1080
+    },
+    "channel": {
+      "ambient": 0.0,
+      "blur_sigma": 0.0,
+      "brightness": 1.0,
+      "gamma": 1.0,
+      "jpeg_quality": 100,
+      "motion_angle_deg": 0.0,
+      "motion_blur_px": 0,
+      "noise_sigma": 0.0,
+      "perspective": 0.0,
+      "seed": 0,
+      "vignette": 0.0
+    },
+    "compression": {
+      "enabled": true,
+      "max_literal": 255,
+      "min_match": 4,
+      "use_invert_op": true,
+      "window": 65535
+    },
+    "ecc": {
+      "interleave": true,
+      "nsym": 32
+    },
+    "protocol": {
+      "bits_per_cell": 4,
+      "blocks_per_packet": 11,
+      "cols": 6,
+      "crc_bits": 16,
+      "data_bytes_per_frame": 11,
+      "header_bits": 16,
+      "packet_frames": 255,
+      "pattern_set": "full16",
+      "rows": 5,
+      "rs_nsym": 32
+    },
+    "quick": false,
+    "receiver": {
+      "assume_cropped": true,
+      "detection_min_area_fraction": 0.15,
+      "local_threshold_fraction": 0.5,
+      "min_contrast": 0.08,
+      "sample_radius_px": 6,
+      "threshold": 0.5,
+      "use_inversion_pair": false
+    },
+    "screen": {
+      "background": 255,
+      "border_px": 10,
+      "canvas_height": 1350,
+      "canvas_width": 1080,
+      "cols": 6,
+      "fiducial_px": 48,
+      "foreground": 0,
+      "gap_level": 255,
+      "gap_px": 8,
+      "margin_px": 90,
+      "rows": 5,
+      "supersample": 4
+    },
+    "seed": 20261108
+  },
+  "device": {
+    "camera": {
+      "exposure": "auto",
+      "focus": "auto (Continuity Camera)",
+      "format": "H.264 MP4 via AVFoundation",
+      "fps": 30.0,
+      "iso": "auto",
+      "mode": "video",
+      "notes": "Safari bounds approximately {0,28,1280,832}; player.html?fps=10; M10 baseline repeat 1",
+      "resolution": "1920x1440",
+      "stabilization": "not applicable (hand-held, software capture)",
+      "zoom": "1x"
+    },
+    "display": {
+      "brightness": "not measured (macOS default, unchanged from M9)",
+      "height_px": 1664,
+      "kind": "computer",
+      "model": "Apple M5 built-in Liquid Retina (MacBook Air)",
+      "notes": "",
+      "refresh_hz": 60.0,
+      "width_px": 2560
+    },
+    "model": "iPhone14,2 (Continuity Camera, 'Arsh Camera')",
+    "notes": "",
+    "os": "iOS (Continuity Camera via macOS)",
+    "serial": ""
+  },
+  "environment": {
+    "cpu_count": 10,
+    "device": {
+      "camera": {
+        "exposure": "auto",
+        "focus": "auto (Continuity Camera)",
+        "format": "H.264 MP4 via AVFoundation",
+        "fps": 30.0,
+        "iso": "auto",
+        "mode": "video",
+        "notes": "Safari bounds approximately {0,28,1280,832}; player.html?fps=10; M10 baseline repeat 1",
+        "resolution": "1920x1440",
+        "stabilization": "not applicable (hand-held, software capture)",
+        "zoom": "1x"
+      },
+      "display": {
+        "brightness": "not measured (macOS default, unchanged from M9)",
+        "height_px": 1664,
+        "kind": "computer",
+        "model": "Apple M5 built-in Liquid Retina (MacBook Air)",
+        "notes": "",
+        "refresh_hz": 60.0,
+        "width_px": 2560
+      },
+      "model": "iPhone14,2 (Continuity Camera, 'Arsh Camera')",
+      "notes": "",
+      "os": "iOS (Continuity Camera via macOS)",
+      "serial": ""
+    },
+    "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+    "machine": "arm64",
+    "numpy": "2.4.4",
+    "opencv": "4.13.0",
+    "otl_version": "0.1.0",
+    "pillow": "12.2.0",
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "pytest": "9.0.3",
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "simulation_only": false,
+    "timestamp_utc": "2026-11-08T11:24:26.199804+00:00",
+    "zstandard": "0.25.0"
+  },
+  "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+  "experiment_metadata": {
+    "capture_settings": {
+      "exposure": "auto",
+      "focus": "auto (Continuity Camera)",
+      "format": "H.264 MP4 via AVFoundation",
+      "fps": 30.0,
+      "iso": "auto",
+      "mode": "video",
+      "notes": "Safari bounds approximately {0,28,1280,832}; player.html?fps=10; M10 baseline repeat 1",
+      "resolution": "1920x1440",
+      "stabilization": "not applicable (hand-held, software capture)",
+      "zoom": "1x"
+    },
+    "capture_source": "camera",
+    "captures": 888,
+    "device": {
+      "camera": "rear camera, Continuity Camera, AVFoundation index 1",
+      "model": "iPhone14,2 (Continuity Camera, 'Arsh Camera')",
+      "notes": "",
+      "os": "iOS (Continuity Camera via macOS)",
+      "serial": ""
+    },
+    "display": {
+      "brightness": "not measured (macOS default, unchanged from M9)",
+      "height_px": 1664,
+      "kind": "computer",
+      "model": "Apple M5 built-in Liquid Retina (MacBook Air)",
+      "notes": "",
+      "refresh_hz": 60.0,
+      "width_px": 2560
+    },
+    "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+    "geometry": {
+      "ambient_lux": null,
+      "angle_deg": null,
+      "distance_mm": null,
+      "hand_held": null,
+      "lighting": "indoor, unchanged from M9; illuminance not measured",
+      "notes": "baseline repeat of frozen M9 setup; distance, angle and ambient lux not measured"
+    },
+    "note": "Decoding is software; the image bytes are physical camera output.",
+    "session_id": "m10-baseline-01-20261108T112241Z",
+    "session_notes": "M10 baseline repeat 1. Frozen M9 configuration: same payload, frame set, renderer, decoder and 10 fps playback. Physical factor values remain unmeasured.",
+    "session_path": "datasets/physical/m10-baseline-01-20261108T112241Z",
+    "transmitter": {
+      "attached_utc": "2026-11-08T11:22:41.475284+00:00",
+      "fps": 10.0,
+      "frame_count": 255,
+      "frames_sha256": "207e0af3350f5c0b30ef593c662f0449debef40a079bf37ddd2d965d95cd7348",
+      "hold": false,
+      "payload_name": "payload.txt",
+      "payload_sha256": "829a6e465f0be0a8ae2e5eee9adb783d84591f2bf1813a20153946edce9cab2d",
+      "player_manifest": "display/player_manifest.json",
+      "player_manifest_sha256": "635fab9b278ae6d634297668cf616ff07aaf8373bfddf9ed7ccbcc175af176d0"
+    }
+  },
+  "failures": [],
+  "n_trials": 888,
+  "quick": false,
+  "raw": "raw/trials.jsonl",
+  "run_id": "20261108T112355Z-a016b8",
+  "simulation_only": false,
+  "spec": {
+    "classification": "PHYSICAL (camera capture) + SOFTWARE (decode), or BLOCKED",
+    "controlled": [
+      "protocol",
+      "layout",
+      "renderer",
+      "decoder",
+      "display frame sequence",
+      "capture settings"
+    ],
+    "dependent": [
+      "frame CRC success",
+      "cell/bit accuracy",
+      "payload reconstruction",
+      "decode latency",
+      "capture/decode rate",
+      "throughput"
+    ],
+    "hypothesis": "The existing OTL frame, renderer and decoder can recover FULL16 frames from real smartphone-camera images of a screen, with cell accuracy and CRC success lower than the simulated clean channel because of optics, exposure, rolling shutter, moir\u00e9 and hand motion.",
+    "id": "E11_physical",
+    "independent": [
+      "device",
+      "display",
+      "distance",
+      "angle",
+      "ambient light",
+      "exposure/focus"
+    ],
+    "procedure": [
+      "Render the payload to PNG frames and build a full-screen player.",
+      "Record the exact displayed frames, their hashes and the player manifest.",
+      "Capture the screen with a named smartphone camera, preserving originals.",
+      "Import the originals into a session without re-encoding them.",
+      "Decode every preserved image with the standard OTL decoder.",
+      "Record CRC, cell/bit accuracy, packet reconstruction, latency and rate.",
+      "Compare physical observations with the E01\u2013E10 simulation baselines."
+    ],
+    "title": "Physical optical validation (screen \u2192 camera)"
+  },
+  "wall_s": 30.52799854100158
+}

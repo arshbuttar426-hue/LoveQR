@@ -1,0 +1,38 @@
+{
+  "classification": "OBSERVED (SIMULATED channel) + THEORETICAL (projected screen time)",
+  "conclusion": "8 of 8 simulated transfers succeeded across channels clean, mild at 0% independent frame loss, with payloads up to 1000 bytes (largest tested: 1000 bytes). Every trial succeeded, so the tested channels and loss rates are upper bounds on tolerated degradation rather than a measured cliff. Simulated wall time is a software benchmark, not screen time: the projected 60 fps screen time and projected net bit rate are reported separately for protocol planning.",
+  "experiment": "E09_end_to_end",
+  "failures": [],
+  "n_trials": 8,
+  "run_id": "20261108T073131Z-c679d4",
+  "simulation_only": true,
+  "summary": {
+    "by_channel": {
+      "clean": {
+        "successes": 4,
+        "trials": 4
+      },
+      "mild": {
+        "successes": 4,
+        "trials": 4
+      }
+    },
+    "by_kind": {
+      "random": {
+        "successes": 4,
+        "trials": 4
+      },
+      "text": {
+        "successes": 4,
+        "trials": 4
+      }
+    },
+    "max_payload_decoded": 1000,
+    "note": "Simulated wall time measures the Python pipeline. Projected screen time = frames / 60 fps; projected net bit rate uses that screen time. Neither is a physical camera measurement.",
+    "success_rate": 1.0,
+    "successes": 8,
+    "trials": 8
+  },
+  "title": "End-to-end simulated transfer",
+  "wall_s": 39.367726917000255
+}

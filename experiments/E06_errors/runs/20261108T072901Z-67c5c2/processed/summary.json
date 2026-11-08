@@ -1,0 +1,19 @@
+{
+  "classification": "OBSERVED (software ECC) + THEORETICAL (capacity)",
+  "conclusion": "The measured boundary follows 2*errors + erasures <= nsym. Cases at or below capacity decode; cases above it fail with E_ECC/E_RECONSTRUCT rather than returning corrupt data. This is an injected-error test of the RS layer, not an optical measurement: frame CRC would normally convert most optical byte errors into erasures.",
+  "experiment": "E06_errors",
+  "failures": [],
+  "n_trials": 24,
+  "run_id": "20261108T072901Z-67c5c2",
+  "simulation_only": true,
+  "summary": {
+    "failures": 6,
+    "max_capacity_used_success": 32,
+    "min_capacity_used_failure": 33,
+    "nsym": 32,
+    "successes": 18,
+    "theoretical_rule": "2*errors + erasures <= nsym"
+  },
+  "title": "Reed-Solomon byte-error and mixed error/erasure capacity",
+  "wall_s": 0.35850629198830575
+}

@@ -1,0 +1,2 @@
+trial,crc_ok_frames,cell_accuracy,render_deterministic,decode_deterministic,mean_render_ms,p95_render_ms,mean_decode_ms,p95_decode_ms
+0,40,1.0,1.0,1.0,0.8360998501302674,0.19421220276853993,6.099659500614507,6.392162811243907

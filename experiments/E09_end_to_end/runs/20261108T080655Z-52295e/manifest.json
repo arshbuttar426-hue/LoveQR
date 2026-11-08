@@ -1,0 +1,287 @@
+{
+  "artifacts": {},
+  "config_defaults": {
+    "camera": {
+      "assume_cropped": true,
+      "display_fps": 60.0,
+      "exposure_us": 8000.0,
+      "fps": 30.0,
+      "height": 1350,
+      "random_phase": true,
+      "readout_direction": 1,
+      "row_time_us": 20.0,
+      "width": 1080
+    },
+    "channel": {
+      "ambient": 0.0,
+      "blur_sigma": 0.0,
+      "brightness": 1.0,
+      "gamma": 1.0,
+      "jpeg_quality": 100,
+      "motion_angle_deg": 0.0,
+      "motion_blur_px": 0,
+      "noise_sigma": 0.0,
+      "perspective": 0.0,
+      "seed": 0,
+      "vignette": 0.0
+    },
+    "compression": {
+      "enabled": true,
+      "max_literal": 255,
+      "min_match": 4,
+      "use_invert_op": true,
+      "window": 65535
+    },
+    "ecc": {
+      "interleave": true,
+      "nsym": 32
+    },
+    "protocol": {
+      "bits_per_cell": 4,
+      "blocks_per_packet": 11,
+      "cols": 6,
+      "crc_bits": 16,
+      "data_bytes_per_frame": 11,
+      "header_bits": 16,
+      "packet_frames": 255,
+      "pattern_set": "full16",
+      "rows": 5,
+      "rs_nsym": 32
+    },
+    "quick": false,
+    "receiver": {
+      "assume_cropped": true,
+      "detection_min_area_fraction": 0.15,
+      "min_contrast": 0.08,
+      "sample_radius_px": 6,
+      "threshold": 0.5,
+      "use_inversion_pair": false
+    },
+    "screen": {
+      "background": 255,
+      "border_px": 10,
+      "canvas_height": 1350,
+      "canvas_width": 1080,
+      "cols": 6,
+      "fiducial_px": 48,
+      "foreground": 0,
+      "gap_level": 255,
+      "gap_px": 8,
+      "margin_px": 90,
+      "rows": 5,
+      "supersample": 4
+    },
+    "seed": 20261108
+  },
+  "environment": {
+    "cpu_count": 10,
+    "device": null,
+    "evidence_source": "SIMULATED / SOFTWARE",
+    "machine": "arm64",
+    "numpy": "2.4.4",
+    "opencv": "4.13.0",
+    "otl_version": "0.1.0",
+    "pillow": "12.2.0",
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "pytest": "9.0.3",
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "simulation_only": true,
+    "timestamp_utc": "2026-11-08T08:16:11.925337+00:00",
+    "zstandard": "0.25.0"
+  },
+  "experiment_metadata": {
+    "channels": {
+      "brutal": {
+        "ambient": 60.0,
+        "blur_sigma": 3.5,
+        "brightness": 0.5,
+        "gamma": 1.6,
+        "jpeg_quality": 35,
+        "motion_angle_deg": 0.0,
+        "motion_blur_px": 0,
+        "noise_sigma": 20.0,
+        "perspective": 0.08,
+        "seed": 0,
+        "vignette": 0.6
+      },
+      "clean": {
+        "ambient": 0.0,
+        "blur_sigma": 0.0,
+        "brightness": 1.0,
+        "gamma": 1.0,
+        "jpeg_quality": 100,
+        "motion_angle_deg": 0.0,
+        "motion_blur_px": 0,
+        "noise_sigma": 0.0,
+        "perspective": 0.0,
+        "seed": 0,
+        "vignette": 0.0
+      },
+      "harsh": {
+        "ambient": 25.0,
+        "blur_sigma": 1.4,
+        "brightness": 0.82,
+        "gamma": 1.15,
+        "jpeg_quality": 80,
+        "motion_angle_deg": 0.0,
+        "motion_blur_px": 0,
+        "noise_sigma": 4.0,
+        "perspective": 0.03,
+        "seed": 0,
+        "vignette": 0.25
+      },
+      "mild": {
+        "ambient": 12.0,
+        "blur_sigma": 0.8,
+        "brightness": 0.92,
+        "gamma": 1.05,
+        "jpeg_quality": 92,
+        "motion_angle_deg": 0.0,
+        "motion_blur_px": 0,
+        "noise_sigma": 2.0,
+        "perspective": 0.01,
+        "seed": 0,
+        "vignette": 0.12
+      }
+    },
+    "evidence_source": "SIMULATED / SOFTWARE",
+    "matrix": {
+      "channels": [
+        "clean",
+        "mild",
+        "harsh",
+        "brutal"
+      ],
+      "drop_probabilities": [
+        0.0,
+        0.03
+      ],
+      "kinds": [
+        "text",
+        "random"
+      ],
+      "sizes": [
+        100,
+        1000,
+        2400,
+        6000
+      ],
+      "trials": 64
+    },
+    "payload_generator": {
+      "random": {
+        "bit_generator": "PCG64 (numpy default)",
+        "draw": "integers(0, 256, size=payload_bytes, dtype=uint8).tobytes()",
+        "factory": "numpy.random.default_rng",
+        "seed_rule": "PAYLOAD_SEED_BASE + payload_bytes (PAYLOAD_SEED_BASE=7000)"
+      },
+      "text": {
+        "method": "UTF-8 template repeated then truncated to payload_bytes",
+        "seed": null,
+        "template_bytes": 120,
+        "template_sha256": "09ebc3935e427332dd0a4e38a0b3d53d7109f1c8bc62a48296fd2f2467239119"
+      }
+    },
+    "payload_manifest_sha256": "9cf02deb1f14f95ed3521b5754216e45526f910a61b3e47704817287dd2e6e39",
+    "payloads": [
+      {
+        "kind": "text",
+        "payload_bytes": 100,
+        "seed": null,
+        "sha256": "982e9a33c8a4f51171b39d2fbd21f1e16bf0416b1a241f114980717670c5a715"
+      },
+      {
+        "kind": "text",
+        "payload_bytes": 1000,
+        "seed": null,
+        "sha256": "e5a0710f3c93b190a140e484194d2110861c45016ffb786f631f6d07cab68b0a"
+      },
+      {
+        "kind": "text",
+        "payload_bytes": 2400,
+        "seed": null,
+        "sha256": "947ac3800699cc6c46560d2ec64df7fbca169b55b16f3270a64f8f7b659bdf23"
+      },
+      {
+        "kind": "text",
+        "payload_bytes": 6000,
+        "seed": null,
+        "sha256": "174c81fb4fd750fccad135a0486648974c69b2cdabe79db6ed530739c50f51d5"
+      },
+      {
+        "kind": "random",
+        "payload_bytes": 100,
+        "seed": 7100,
+        "sha256": "9c32e072fc4ae9f6a38a6795f08ea6e8ebd3a737550bcab2a61be7eab8e2bfdf"
+      },
+      {
+        "kind": "random",
+        "payload_bytes": 1000,
+        "seed": 8000,
+        "sha256": "e2300ba37000dd5cffec239aca337104a616edc5014761b1606af3f4a52ae132"
+      },
+      {
+        "kind": "random",
+        "payload_bytes": 2400,
+        "seed": 9400,
+        "sha256": "41f6d6b9a9bf68051b4681abd607608f90e8410e153c6cfe71b379222569be98"
+      },
+      {
+        "kind": "random",
+        "payload_bytes": 6000,
+        "seed": 13000,
+        "sha256": "a8d61b53c8b26efaa90daa907b119c67f2a0153b74e7f89d2b4927d81c6664ba"
+      }
+    ],
+    "physical_device": null,
+    "pipeline_seed_rule": "9000 + payload_bytes + int(drop_probability * 1000)",
+    "simulation_only": true
+  },
+  "failures": [],
+  "n_trials": 64,
+  "quick": false,
+  "raw": "raw/trials.jsonl",
+  "run_id": "20261108T080655Z-52295e",
+  "simulation_only": true,
+  "spec": {
+    "classification": "OBSERVED (SIMULATED channel) + THEORETICAL (projected screen time)",
+    "controlled": [
+      "protocol",
+      "layout",
+      "renderer",
+      "decoder",
+      "RS settings",
+      "seed"
+    ],
+    "dependent": [
+      "transfer success",
+      "compression ratio",
+      "frames decoded/dropped",
+      "BER",
+      "simulated throughput",
+      "projected screen throughput",
+      "decode latency",
+      "reconstruction time",
+      "CPU/memory"
+    ],
+    "hypothesis": "The full pipeline (compression, packetisation, RS, rendering, simulated channel, spatial decode, reassembly) recovers files under clean/mild/harsh channels and moderate frame loss, with a measurable failure limit on a deliberately brutal stress channel.",
+    "id": "E09_end_to_end",
+    "independent": [
+      "payload type/size",
+      "channel severity",
+      "frame-drop probability"
+    ],
+    "procedure": [
+      "Generate text and seeded-random payloads at several sizes and hash each one.",
+      "Record the payload generator, every seed and every SHA-256 in the run manifest.",
+      "Run the complete simulate_transfer pipeline with clean/mild/harsh/brutal channels and 0/3% frame loss.",
+      "Record success, per-packet RS statistics, errors, throughput, latency, reconstruction time and resource use for every trial, including failures.",
+      "Re-derive each payload hash and fingerprint the payload set and the outcome set.",
+      "Separate simulated wall-clock throughput, projected 60 fps screen throughput, decode latency and reconstruction time."
+    ],
+    "title": "End-to-end simulated transfer"
+  },
+  "wall_s": 556.7050944999937
+}

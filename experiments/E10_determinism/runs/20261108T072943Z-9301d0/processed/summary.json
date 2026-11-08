@@ -1,0 +1,33 @@
+{
+  "classification": "OBSERVED (software)",
+  "conclusion": "Rendering is byte-identical across repeated calls, decoding the same prerecorded PNGs twice produces identical cell sequences, and the end-to-end pipeline reproduces the same drop pattern and output with a fixed seed. The decoder has no camera dependency. Latency and memory figures are OBSERVED software measurements on this host and will vary with hardware.",
+  "experiment": "E10_determinism",
+  "failures": [],
+  "n_trials": 3,
+  "run_id": "20261108T072943Z-9301d0",
+  "simulation_only": true,
+  "summary": {
+    "artifacts": "artifacts/frames/*.png",
+    "cell_accuracy": 1.0,
+    "corpus_hash": "a2bdb40d0c222d9a18af38fba1cdff31bddc972457b82d2d7b40268515624b4c",
+    "crc_ok_frames": 40,
+    "decode_deterministic": true,
+    "frames": 40,
+    "latency_ms": {
+      "decode_mean": 5.868839675167692,
+      "decode_p50": 5.763978493632749,
+      "decode_p95": 6.060516340221511,
+      "render_mean": 0.8417447501415154
+    },
+    "pipeline_deterministic": true,
+    "render_deterministic": true,
+    "resource": {
+      "cpu_percent": 717.038428041852,
+      "cpu_s": 12.547226,
+      "max_rss_kb": 123305984,
+      "wall_s": 1.749867999998969
+    }
+  },
+  "title": "Determinism, prerecorded-image decoding and resource benchmark",
+  "wall_s": 4.603837999995449
+}

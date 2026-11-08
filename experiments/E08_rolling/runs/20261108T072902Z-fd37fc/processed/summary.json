@@ -1,0 +1,20 @@
+{
+  "classification": "OBSERVED (SIMULATED rolling shutter) + THEORETICAL (timing)",
+  "conclusion": "A 26-chip word is recovered only when the rolling readout spans at least 26 display symbol periods. At 60 Hz (16.7 ms per symbol) a 27 ms readout sees only ~1.6 symbols, so a full blink word cannot fit in one capture; 240 Hz is still far short. At 1000 Hz the same readout sees ~27 symbols and all three IDs decode. This is the central temporal constraint of the proposed architecture, and it is a physical/arithmetic result, not a software limitation.",
+  "experiment": "E08_rolling",
+  "failures": [],
+  "n_trials": 60,
+  "run_id": "20261108T072902Z-fd37fc",
+  "simulation_only": true,
+  "summary": {
+    "physical_limit": "visible display symbols = height * row_time / symbol_period; camera frame rate does not multiply display refresh rate",
+    "readout_us_default": 27000.0,
+    "success_when_word_does_not_fit": 0.0,
+    "success_when_word_fits": 0.9285714285714286,
+    "successful_words": 39,
+    "trials_with_word_fit": 42,
+    "word_chips": 26
+  },
+  "title": "Temporal blink IDs under a rolling-shutter capture",
+  "wall_s": 1.8677818330033915
+}

@@ -1,0 +1,73 @@
+{
+  "camera": {
+    "assume_cropped": true,
+    "display_fps": 60.0,
+    "exposure_us": 8000.0,
+    "fps": 30.0,
+    "height": 1350,
+    "random_phase": true,
+    "readout_direction": 1,
+    "row_time_us": 20.0,
+    "width": 1080
+  },
+  "channel": {
+    "ambient": 0.0,
+    "blur_sigma": 0.0,
+    "brightness": 1.0,
+    "gamma": 1.0,
+    "jpeg_quality": 100,
+    "motion_angle_deg": 0.0,
+    "motion_blur_px": 0,
+    "noise_sigma": 0.0,
+    "perspective": 0.0,
+    "seed": 0,
+    "vignette": 0.0
+  },
+  "compression": {
+    "enabled": true,
+    "max_literal": 255,
+    "min_match": 4,
+    "use_invert_op": true,
+    "window": 65535
+  },
+  "ecc": {
+    "interleave": true,
+    "nsym": 32
+  },
+  "protocol": {
+    "bits_per_cell": 4,
+    "blocks_per_packet": 11,
+    "cols": 6,
+    "crc_bits": 16,
+    "data_bytes_per_frame": 11,
+    "header_bits": 16,
+    "packet_frames": 255,
+    "pattern_set": "full16",
+    "rows": 5,
+    "rs_nsym": 32
+  },
+  "quick": false,
+  "receiver": {
+    "assume_cropped": true,
+    "detection_min_area_fraction": 0.15,
+    "min_contrast": 0.08,
+    "sample_radius_px": 6,
+    "threshold": 0.5,
+    "use_inversion_pair": false
+  },
+  "screen": {
+    "background": 255,
+    "border_px": 10,
+    "canvas_height": 1350,
+    "canvas_width": 1080,
+    "cols": 6,
+    "fiducial_px": 48,
+    "foreground": 0,
+    "gap_level": 255,
+    "gap_px": 8,
+    "margin_px": 90,
+    "rows": 5,
+    "supersample": 4
+  },
+  "seed": 20261108
+}

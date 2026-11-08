@@ -1,0 +1,14 @@
+{
+  "classification": "OBSERVED (software)",
+  "conclusion": "The run did not complete. Raw trials written before the failure are retained; see failures and the traceback in manifest.json.",
+  "experiment": "E10_determinism",
+  "failures": [
+    "ProtocolError: [E_PROTOCOL] protocol.FileHeader: file name too long for the header {'name': 'determinism.bin', 'max_bytes': 13}"
+  ],
+  "n_trials": 1,
+  "run_id": "20261107T222117Z-08f6b9",
+  "simulation_only": true,
+  "summary": {},
+  "title": "Determinism, prerecorded-image decoding and resource benchmark",
+  "wall_s": 0.8204312919988297
+}

@@ -1,0 +1,327 @@
+{
+  "classification": "PHYSICAL (camera capture) + SOFTWARE (decode)",
+  "conclusion": "PHYSICAL / CAMERA CAPTURE. Session m10-baseline-01-20261108T112241Z from iPhone14,2 (Continuity Camera, 'Arsh Camera') capturing a Apple M5 built-in Liquid Retina (MacBook Air): 888 camera samples, 549 passed the frame CRC (61.8%); 255/255 unique displayed frames (100.0%). Mean cell accuracy 1.000 and bit accuracy 1.000 over 255 unique frames with a display mapping. A complete payload of 317 bytes was recovered from 294 compressed bytes (1.08x) and its SHA-256 matched the transmitted payload. At the observed 10.00 display fps the gross channel rate is 1200 bps, the gross payload rate is 880 bps, the RS(255,223) goodput is 769 bps and the SHA-verified application rate is 99 bps. Decode latency 7.09 ms per camera sample, packet decode + reassembly 2.15 ms, decode throughput 141.1 samples/s. All physical numbers come from the preserved camera files; decoding is software. Compare with E01\u2013E10 only through the comparison table, which states the basis of every pair.",
+  "device": {
+    "camera": {
+      "exposure": "auto",
+      "focus": "auto (Continuity Camera)",
+      "format": "H.264 MP4 via AVFoundation",
+      "fps": 30.0,
+      "iso": "auto",
+      "mode": "video",
+      "notes": "Safari bounds approximately {0,28,1280,832}; player.html?fps=10; M10 baseline repeat 1",
+      "resolution": "1920x1440",
+      "stabilization": "not applicable (hand-held, software capture)",
+      "zoom": "1x"
+    },
+    "display": {
+      "brightness": "not measured (macOS default, unchanged from M9)",
+      "height_px": 1664,
+      "kind": "computer",
+      "model": "Apple M5 built-in Liquid Retina (MacBook Air)",
+      "notes": "",
+      "refresh_hz": 60.0,
+      "width_px": 2560
+    },
+    "model": "iPhone14,2 (Continuity Camera, 'Arsh Camera')",
+    "notes": "",
+    "os": "iOS (Continuity Camera via macOS)",
+    "serial": ""
+  },
+  "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+  "experiment": "E11_physical",
+  "experiment_metadata": {
+    "capture_settings": {
+      "exposure": "auto",
+      "focus": "auto (Continuity Camera)",
+      "format": "H.264 MP4 via AVFoundation",
+      "fps": 30.0,
+      "iso": "auto",
+      "mode": "video",
+      "notes": "Safari bounds approximately {0,28,1280,832}; player.html?fps=10; M10 baseline repeat 1",
+      "resolution": "1920x1440",
+      "stabilization": "not applicable (hand-held, software capture)",
+      "zoom": "1x"
+    },
+    "capture_source": "camera",
+    "captures": 888,
+    "device": {
+      "camera": "rear camera, Continuity Camera, AVFoundation index 1",
+      "model": "iPhone14,2 (Continuity Camera, 'Arsh Camera')",
+      "notes": "",
+      "os": "iOS (Continuity Camera via macOS)",
+      "serial": ""
+    },
+    "display": {
+      "brightness": "not measured (macOS default, unchanged from M9)",
+      "height_px": 1664,
+      "kind": "computer",
+      "model": "Apple M5 built-in Liquid Retina (MacBook Air)",
+      "notes": "",
+      "refresh_hz": 60.0,
+      "width_px": 2560
+    },
+    "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+    "geometry": {
+      "ambient_lux": null,
+      "angle_deg": null,
+      "distance_mm": null,
+      "hand_held": null,
+      "lighting": "indoor, unchanged from M9; illuminance not measured",
+      "notes": "baseline repeat of frozen M9 setup; distance, angle and ambient lux not measured"
+    },
+    "note": "Decoding is software; the image bytes are physical camera output.",
+    "session_id": "m10-baseline-01-20261108T112241Z",
+    "session_notes": "M10 baseline repeat 1. Frozen M9 configuration: same payload, frame set, renderer, decoder and 10 fps playback. Physical factor values remain unmeasured.",
+    "session_path": "datasets/physical/m10-baseline-01-20261108T112241Z",
+    "transmitter": {
+      "attached_utc": "2026-11-08T11:22:41.475284+00:00",
+      "fps": 10.0,
+      "frame_count": 255,
+      "frames_sha256": "207e0af3350f5c0b30ef593c662f0449debef40a079bf37ddd2d965d95cd7348",
+      "hold": false,
+      "payload_name": "payload.txt",
+      "payload_sha256": "829a6e465f0be0a8ae2e5eee9adb783d84591f2bf1813a20153946edce9cab2d",
+      "player_manifest": "display/player_manifest.json",
+      "player_manifest_sha256": "635fab9b278ae6d634297668cf616ff07aaf8373bfddf9ed7ccbcc175af176d0"
+    }
+  },
+  "failures": [],
+  "n_trials": 888,
+  "run_id": "20261108T112355Z-a016b8",
+  "simulation_only": false,
+  "summary": {
+    "accuracy": {
+      "bit_accuracy": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0,
+        "n": 255.0,
+        "p50": 1.0,
+        "p95": 1.0,
+        "std": 0.0
+      },
+      "bit_accuracy_mean": 1.0,
+      "bit_accuracy_per_capture_mean": 1.0,
+      "bit_error_rate": 0.0,
+      "cell_accuracy": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0,
+        "n": 255.0,
+        "p50": 1.0,
+        "p95": 1.0,
+        "std": 0.0
+      },
+      "cell_accuracy_mean": 1.0,
+      "cell_accuracy_per_capture_mean": 1.0,
+      "cell_error_rate": 0.0
+    },
+    "capture_settings": {
+      "exposure": "auto",
+      "focus": "auto (Continuity Camera)",
+      "format": "H.264 MP4 via AVFoundation",
+      "fps": 30.0,
+      "iso": "auto",
+      "mode": "video",
+      "notes": "Safari bounds approximately {0,28,1280,832}; player.html?fps=10; M10 baseline repeat 1",
+      "resolution": "1920x1440",
+      "stabilization": "not applicable (hand-held, software capture)",
+      "zoom": "1x"
+    },
+    "capture_source": "camera",
+    "captures": {
+      "attempt_failure_rate": 0.3817567567567568,
+      "count": 888,
+      "crc_rate": 0.6182432432432432,
+      "decoded_crc_ok": 549,
+      "detection_failures": 96,
+      "duplicate_files": 0,
+      "error_counts": {
+        "E_DETECT": 96
+      },
+      "expected_frames": 255,
+      "files": 888,
+      "frame_delivery_rate": 1.0,
+      "frame_index_matches": 0,
+      "frame_loss_rate": 0.0,
+      "ground_truth_attempts": 549,
+      "ground_truth_frames": 255,
+      "image_files": 888,
+      "media_files": 1,
+      "note": "count is unique image SHA-256 values; files includes byte-identical duplicates from a burst. crc_rate is the fraction of camera samples that decoded with a valid frame CRC; frame_delivery_rate is unique displayed frames / expected packet frames.",
+      "unique_frames": 255
+    },
+    "comparison": [
+      {
+        "basis": "E02 clean simulated channel vs E11 observed captures with known frames",
+        "delta": 0.0,
+        "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+        "metric": "clean-cell accuracy",
+        "observed": 1.0,
+        "simulated": 1.0,
+        "unit": "fraction"
+      },
+      {
+        "basis": "E09 64 simulated trials vs E11 one physical packet; sample sizes differ",
+        "delta": 0.25,
+        "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+        "metric": "file-transfer success",
+        "observed": 1.0,
+        "simulated": 0.75,
+        "unit": "fraction"
+      },
+      {
+        "basis": "E10 software decode mean vs E11 observed-image decode mean (same decoder)",
+        "delta": 0.48682052242060436,
+        "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+        "metric": "decode latency",
+        "observed": 7.085226772179741,
+        "simulated": 6.598406249759137,
+        "unit": "ms/frame"
+      },
+      {
+        "basis": "E01 payload arithmetic at 60 fps vs E11 at the observed 10 fps; the rate ratio is mostly the display rate",
+        "delta": -4400.087991200898,
+        "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+        "metric": "raw payload bit rate at 60 fps",
+        "observed": 879.9120087991021,
+        "simulated": 5280,
+        "unit": "bps"
+      },
+      {
+        "basis": "E01 arithmetic at E11's observed display rate vs E11 unique delivered frames",
+        "delta": 0.0,
+        "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+        "metric": "raw payload bit rate at the observed display rate",
+        "observed": 879.9120087991021,
+        "simulated": 879.9120087991021,
+        "unit": "bps"
+      },
+      {
+        "basis": "E01 arithmetic at E11's observed display rate vs E11 RS(255,223) packet capacity",
+        "delta": 0.0,
+        "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+        "metric": "RS goodput at the observed display rate",
+        "observed": 769.4916782831364,
+        "simulated": 769.4916782831364,
+        "unit": "bps"
+      }
+    ],
+    "device": {
+      "camera": "rear camera, Continuity Camera, AVFoundation index 1",
+      "model": "iPhone14,2 (Continuity Camera, 'Arsh Camera')",
+      "notes": "",
+      "os": "iOS (Continuity Camera via macOS)",
+      "serial": ""
+    },
+    "display": {
+      "brightness": "not measured (macOS default, unchanged from M9)",
+      "height_px": 1664,
+      "kind": "computer",
+      "model": "Apple M5 built-in Liquid Retina (MacBook Air)",
+      "notes": "",
+      "refresh_hz": 60.0,
+      "width_px": 2560
+    },
+    "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+    "geometry": {
+      "ambient_lux": null,
+      "angle_deg": null,
+      "distance_mm": null,
+      "hand_held": null,
+      "lighting": "indoor, unchanged from M9; illuminance not measured",
+      "notes": "baseline repeat of frozen M9 setup; distance, angle and ambient lux not measured"
+    },
+    "latency": {
+      "decode_attempts": 888,
+      "decode_ms": {
+        "max": 16.329999998561107,
+        "mean": 7.085226772179741,
+        "min": 2.1527089993469417,
+        "n": 888.0,
+        "p50": 7.5608544939314015,
+        "p95": 8.153345603204798,
+        "std": 1.6353335754515677
+      },
+      "decode_samples_fps": 141.13874293008044,
+      "decode_wall_s": 6.29168137369561,
+      "packet_decode_ms": 2.099541001371108,
+      "reassembly_ms": 0.04645899753086269,
+      "reconstruction_ms": 2.1459999989019707,
+      "resource": {
+        "cpu_percent": 168.75797933689137,
+        "cpu_s": 51.486994,
+        "max_rss_kb": 120896,
+        "rss_kb": 120896,
+        "wall_s": 30.509368625003844
+      }
+    },
+    "note": "PHYSICAL camera bytes decoded by software. Accuracy is relative to the displayed frame only where the operator recorded an independent frame mapping; video frame identity comes from the OTL header.",
+    "packet_summary": {
+      "corrected_symbols": 0,
+      "erased_frames": 0,
+      "packet_loss_rate": 0.0,
+      "packets_expected": 1,
+      "packets_received": 1,
+      "rs_nsym": 32
+    },
+    "packets": [
+      {
+        "decoded": true,
+        "frames_present": 255,
+        "packet_id": 0,
+        "stats": {
+          "block_failures": [],
+          "corrected_per_block": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "erasures": [],
+          "frames_missing": 0,
+          "frames_present": 255
+        }
+      }
+    ],
+    "session_id": "m10-baseline-01-20261108T112241Z",
+    "status": "measured",
+    "throughput": {
+      "capture_duration_s": 29.97092,
+      "capture_fps": 30.0,
+      "compressed": true,
+      "compression_ratio": 1.0782312925170068,
+      "display_fps_manifest": 10.0,
+      "display_fps_observed": 9.999000099989797,
+      "display_fps_used": 9.999000099989797,
+      "expected_frames": 255,
+      "frame_delivery_rate": 1.0,
+      "frame_loss_rate": 0.0,
+      "frames_captured": 888,
+      "frames_decoded": 549,
+      "net_bps": 99.44103628852598,
+      "note": "All rates are reported only when the complete payload was reassembled and its SHA-256 matched. raw_channel_bps and raw_payload_bps are gross rates at the observed display rate; rs_goodput_bps is the packet capacity after RS(255,223); net_bps is the SHA-verified application payload. Repeated camera samples of one displayed frame are counted once.",
+      "original_bytes": 317,
+      "packet_duration_s": 25.50255000000052,
+      "payload_bytes": 317,
+      "payload_error": null,
+      "payload_sha256": "829a6e465f0be0a8ae2e5eee9adb783d84591f2bf1813a20153946edce9cab2d",
+      "payload_success": true,
+      "raw_channel_bps": 1199.8800119987757,
+      "raw_payload_bps": 879.9120087991021,
+      "rs_goodput_bps": 769.4916782831364,
+      "unique_frames": 255,
+      "wire_bytes": 294
+    }
+  },
+  "title": "Physical optical validation (screen \u2192 camera)",
+  "wall_s": 30.52799854100158
+}

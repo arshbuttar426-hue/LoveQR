@@ -1,0 +1,54 @@
+{
+  "classification": "OBSERVED (SIMULATED rolling shutter) + THEORETICAL (timing)",
+  "conclusion": "A 26-chip word is recovered only when the rolling readout spans at least 26 display symbol periods; the lowest tested display rate with a fitting word was 1000 Hz. At 60 Hz a 27.0 ms readout sees ~1.62 symbols, so a full blink word cannot fit in one capture. Separately, 3 trial(s) had a fitting readout but an exposure up to 2.50 symbol periods long; integrating several chips per row destroyed the word. Exposure must therefore be no longer than one symbol period as well as the readout spanning the word. This is the central temporal constraint of the proposed architecture, and it is a physical/arithmetic result, not a software limitation.",
+  "experiment": "E08_rolling",
+  "failures": [],
+  "n_trials": 60,
+  "run_id": "20261108T073129Z-226c78",
+  "simulation_only": true,
+  "summary": {
+    "by_display_fps": {
+      "1000": {
+        "correct": 36.0,
+        "trials": 45.0,
+        "word_fits": 39.0
+      },
+      "120": {
+        "correct": 0.0,
+        "trials": 3.0,
+        "word_fits": 0.0
+      },
+      "2000": {
+        "correct": 3.0,
+        "trials": 3.0,
+        "word_fits": 3.0
+      },
+      "240": {
+        "correct": 0.0,
+        "trials": 3.0,
+        "word_fits": 0.0
+      },
+      "500": {
+        "correct": 0.0,
+        "trials": 3.0,
+        "word_fits": 0.0
+      },
+      "60": {
+        "correct": 0.0,
+        "trials": 3.0,
+        "word_fits": 0.0
+      }
+    },
+    "physical_limit": "visible display symbols = height * row_time / symbol_period; camera frame rate does not multiply display refresh rate; exposure must also be no longer than one symbol period",
+    "readout_us_default": 27000.0,
+    "success_when_temporal_budget_ok": 1.0,
+    "success_when_word_does_not_fit": 0.0,
+    "success_when_word_fits": 0.9285714285714286,
+    "successful_words": 39,
+    "trials_with_temporal_budget": 39,
+    "trials_with_word_fit": 42,
+    "word_chips": 26
+  },
+  "title": "Temporal blink IDs under a rolling-shutter capture",
+  "wall_s": 1.8427443749969825
+}

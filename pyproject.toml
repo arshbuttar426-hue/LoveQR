@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "optical-transmission-lab"
+version = "0.1.0"
+description = "Reproducible research and engineering lab for smartphone-camera optical data transmission (OCC/VLC, rolling shutter, dynamic spatial codes)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "OPTICAL_TRANSMISSION_LAB contributors" }]
+dependencies = [
+  "numpy>=2.0,<3",
+  "opencv-python>=4.10,<5",
+  "Pillow>=11,<13",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+zstd = ["zstandard>=0.23,<1"]
+
+[project.scripts]
+otl = "otl.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["otl*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["error::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

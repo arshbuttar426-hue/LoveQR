@@ -1,0 +1,107 @@
+# Licences and provenance
+
+This document records the licence of the project and of every third-party
+component that can influence a build, a test result or an experiment. It also
+records what was **not** copied.
+
+## 1. Project licence
+
+`OPTICAL_TRANSMISSION_LAB` is released under the **MIT License**. The full text
+is in [`../LICENSE`](../LICENSE).
+
+```text
+SPDX-License-Identifier: MIT
+Copyright (c) 2026 OPTICAL_TRANSMISSION_LAB contributors
+```
+
+## 2. Runtime and development dependencies
+
+Versions are pinned in [`../requirements.lock`](../requirements.lock). The
+licence column is the licence of the distributed package; where a package
+bundles a differently licensed upstream project, both are named.
+
+| Package | Pinned version | Licence | Upstream / notes |
+| --- | --- | --- | --- |
+| Python | 3.14.7 (host) | PSF-2.0 | Python Software Foundation Licence. `requires-python >= 3.11`. |
+| numpy | 2.4.4 | BSD-3-Clause | NumPy Developers. |
+| opencv-python | 4.13.0.92 | Apache-2.0 (OpenCV), MIT (Python wrapper) | OpenCV 4.x is Apache-2.0; the `opencv-python` packaging is MIT. Used for resize, warp, threshold and JPEG encode/decode. |
+| Pillow | 12.2.0 | MIT-CMU (HPND) | Pillow contributors. Used for PNG I/O in the CLI and experiments. |
+| zstandard | 0.25.0 | BSD-3-Clause | `python-zstandard`; bundles Meta's zstd, also BSD-3-Clause. Used **only as a reference point in E07**, never in the protocol. |
+| pytest | 9.0.3 | MIT | pytest-dev. Test runner. |
+| iniconfig | 2.3.0 | MIT | pytest transitive dependency. |
+| packaging | 26.2 | Apache-2.0 OR BSD-2-Clause | pytest transitive dependency. |
+| pluggy | 1.6.0 | MIT | pytest transitive dependency. |
+| setuptools | 81.0.0 | MIT | Build backend for `pip install -e .`. |
+
+No GPL, AGPL, LGPL or other copyleft dependency is required at runtime or for
+testing.
+
+### Optional dependencies
+
+- `zstandard` is an optional extra (`pip install .[zstd]`). Without it, E07
+  reports the zstd reference column as unavailable instead of failing.
+- `pytest` is a development extra. The `otl selftest` command does not require
+  it.
+
+## 3. Clean-room components
+
+The following are implemented from published mathematics and standards, not
+copied from another codebase:
+
+| Component | File | Basis |
+| --- | --- | --- |
+| Reed–Solomon over GF(256) | `otl/ecc/rs.py` | Reed & Solomon (1960); Berlekamp (1968); Massey (1969); Chien (1964); Forney (1965). Standard syndrome / Berlekamp–Massey / Chien / Forney construction. No third-party source was read or transcribed. |
+| CRC-16/CCITT-FALSE, CRC-32 | `otl/ecc/crc.py` | ITU-T V.41 / CRC catalogue parameters; CRC-32 uses Python's `zlib` (PSF licence). |
+| Barker-13 | `otl/protocol/blink.py` | Barker (1953). The sequence `1111100110101` is a mathematical object in the public literature. |
+| Blink IDs | `otl/protocol/blink.py` | Selected at runtime by `search_codebook()` under a stated sidelobe/cross-correlation criterion. No sequence table was copied. |
+| `OTL1` container | `otl/compress/dictionary.py` | Original format inspired by LZ77 (Ziv & Lempel, 1977). Opcodes and bitstream are defined in `docs/PROTOCOL.md`. |
+| 30-cell / 120-bit frame | `otl/protocol/frame.py` | Original layout defined in `docs/PROTOCOL.md`. |
+| Channel model | `otl/rx/channel.py` | Original synthetic model (perspective, blur, noise, vignette, brightness, gamma, ambient, JPEG). Not calibrated against a device. |
+| Rolling-shutter model | `otl/rx/rolling.py` | Original row-exposure integration model derived from the timing inequality in `docs/RESEARCH.md`. |
+
+## 4. Research literature
+
+Papers and standards are **cited**, not redistributed. No paper PDF, figure,
+dataset or code supplement is included in this repository. Citations are in
+[`RESEARCH.md`](RESEARCH.md#7-references). The relevant works remain under
+their publishers' copyright; users must obtain them from the publisher.
+
+Standards referenced by name:
+
+- IEEE 802.15.7-2018 — short-range optical wireless communications.
+- ITU-T G.9991 (2019) — high-speed indoor visible light communication.
+
+Neither standard text is reproduced here.
+
+## 5. Datasets and captures
+
+- `datasets/corpora/` — empty at the time of writing. Any corpus added later
+  must record its source and licence in this file before use.
+- `datasets/frames/` — empty; experiment frames are written inside each run's
+  `artifacts/` directory instead.
+- `datasets/physical/<session_id>/` — physical camera capture sessions. No
+  physical session exists yet. A capture must include the consent/permission
+  status of the operator and any identifiable content must be removed or
+  cleared.
+- `datasets/physical/demo/` — the project's own rendered demo frames and HTML
+  player (MIT).
+- `datasets/physical/attempts/` — raw failed-setup probes from this project
+  (MIT); not third-party content.
+- `datasets/fixtures/` — non-physical screen-capture fixtures (MIT).
+
+## 6. Generated data
+
+Everything under `experiments/*/runs/`, `results/`, and `CHECKSUMS.sha256` is
+generated by this project and is covered by the project MIT licence. Run
+directories are append-only; see [`MEASUREMENT_POLICY.md`](MEASUREMENT_POLICY.md).
+
+## 7. How to audit
+
+```bash
+python3 scripts/checksums.py --verify   # source files match CHECKSUMS.sha256
+python3 -m pip install -r requirements.lock
+python3 -m pip list --format=freeze     # compare with requirements.lock
+```
+
+If a dependency's licence changes upstream, update this table and
+`requirements.lock` in the same change.

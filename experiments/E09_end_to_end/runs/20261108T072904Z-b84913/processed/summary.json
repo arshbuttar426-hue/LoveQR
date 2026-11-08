@@ -1,0 +1,38 @@
+{
+  "classification": "OBSERVED (SIMULATED channel) + THEORETICAL (projected screen time)",
+  "conclusion": "End-to-end simulated transfers succeed for compressible and random payloads up to the tested sizes under clean and mild channels, and with 3% independent frame loss inside the RS erasure budget. The harsh channel is the stress case; its failures are recorded per trial with the failing stage. Simulated wall time is a software benchmark, not screen time: the projected 60 fps screen time and projected net bit rate are reported separately for protocol planning.",
+  "experiment": "E09_end_to_end",
+  "failures": [],
+  "n_trials": 8,
+  "run_id": "20261108T072904Z-b84913",
+  "simulation_only": true,
+  "summary": {
+    "by_channel": {
+      "clean": {
+        "successes": 4,
+        "trials": 4
+      },
+      "mild": {
+        "successes": 4,
+        "trials": 4
+      }
+    },
+    "by_kind": {
+      "random": {
+        "successes": 4,
+        "trials": 4
+      },
+      "text": {
+        "successes": 4,
+        "trials": 4
+      }
+    },
+    "max_payload_decoded": 1000,
+    "note": "Simulated wall time measures the Python pipeline. Projected screen time = frames / 60 fps; projected net bit rate uses that screen time. Neither is a physical camera measurement.",
+    "success_rate": 1.0,
+    "successes": 8,
+    "trials": 8
+  },
+  "title": "End-to-end simulated transfer",
+  "wall_s": 38.81063362499117
+}

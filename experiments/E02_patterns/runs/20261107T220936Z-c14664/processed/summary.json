@@ -1,0 +1,210 @@
+{
+  "classification": "OBSERVED (SIMULATED channel)",
+  "conclusion": "Measured mean target-cell accuracy by severity: clean=1.000, extreme=1.000, harsh=1.000, mild=1.000. The 16-way decision was perfect at every severity tested here, so this sweep did not find a separating failure mode; a harsher or physical capture would be needed to probe the limit. FULL16 has minimum Hamming distance 1 between cell symbols, so a single misclassified triangle changes the decoded nibble. This is why the protocol adds a CRC-16 per frame and RS(255,223) per packet instead of relying on the cell alphabet for protection.",
+  "experiment": "E02_patterns",
+  "failures": [],
+  "n_trials": 64,
+  "run_id": "20261107T220936Z-c14664",
+  "simulation_only": true,
+  "summary": {
+    "alphabet": {
+      "bits_per_cell": 4,
+      "min_hamming_distance": 1,
+      "pattern_set": "full16",
+      "size": 16,
+      "table": [
+        {
+          "binary": "0000",
+          "colors_top_right_bottom_left": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "value": 0
+        },
+        {
+          "binary": "0001",
+          "colors_top_right_bottom_left": [
+            false,
+            false,
+            false,
+            true
+          ],
+          "value": 1
+        },
+        {
+          "binary": "0010",
+          "colors_top_right_bottom_left": [
+            false,
+            false,
+            true,
+            false
+          ],
+          "value": 2
+        },
+        {
+          "binary": "0011",
+          "colors_top_right_bottom_left": [
+            false,
+            false,
+            true,
+            true
+          ],
+          "value": 3
+        },
+        {
+          "binary": "0100",
+          "colors_top_right_bottom_left": [
+            false,
+            true,
+            false,
+            false
+          ],
+          "value": 4
+        },
+        {
+          "binary": "0101",
+          "colors_top_right_bottom_left": [
+            false,
+            true,
+            false,
+            true
+          ],
+          "value": 5
+        },
+        {
+          "binary": "0110",
+          "colors_top_right_bottom_left": [
+            false,
+            true,
+            true,
+            false
+          ],
+          "value": 6
+        },
+        {
+          "binary": "0111",
+          "colors_top_right_bottom_left": [
+            false,
+            true,
+            true,
+            true
+          ],
+          "value": 7
+        },
+        {
+          "binary": "1000",
+          "colors_top_right_bottom_left": [
+            true,
+            false,
+            false,
+            false
+          ],
+          "value": 8
+        },
+        {
+          "binary": "1001",
+          "colors_top_right_bottom_left": [
+            true,
+            false,
+            false,
+            true
+          ],
+          "value": 9
+        },
+        {
+          "binary": "1010",
+          "colors_top_right_bottom_left": [
+            true,
+            false,
+            true,
+            false
+          ],
+          "value": 10
+        },
+        {
+          "binary": "1011",
+          "colors_top_right_bottom_left": [
+            true,
+            false,
+            true,
+            true
+          ],
+          "value": 11
+        },
+        {
+          "binary": "1100",
+          "colors_top_right_bottom_left": [
+            true,
+            true,
+            false,
+            false
+          ],
+          "value": 12
+        },
+        {
+          "binary": "1101",
+          "colors_top_right_bottom_left": [
+            true,
+            true,
+            false,
+            true
+          ],
+          "value": 13
+        },
+        {
+          "binary": "1110",
+          "colors_top_right_bottom_left": [
+            true,
+            true,
+            true,
+            false
+          ],
+          "value": 14
+        },
+        {
+          "binary": "1111",
+          "colors_top_right_bottom_left": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "value": 15
+        }
+      ],
+      "values": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "bits_per_cell": 4,
+    "distinct_patterns": 16,
+    "max_pairwise_hamming_distance": 4,
+    "mean_target_accuracy_by_severity": {
+      "clean": 1.0,
+      "extreme": 1.0,
+      "harsh": 1.0,
+      "mild": 1.0
+    },
+    "min_pairwise_hamming_distance": 1,
+    "note": "FULL16 uses all 16 combinations, so the minimum symbol distance is one triangle (1 bit). There is no intra-cell error correction; detection and correction rely on the frame CRC and RS layer."
+  },
+  "title": "Separability of the 16 four-triangle cell patterns",
+  "wall_s": 3.3048109160008607
+}

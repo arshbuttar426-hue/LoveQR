@@ -1,0 +1,2 @@
+trial,success,crc_ok,decode_ms,cell_accuracy,bit_accuracy,fiducial_confidence,contrast,bit_margin
+0,1.0,1.0,20.424207992618904,1.0,1.0,0.8612072279892349,1.0,0.9991623667010664

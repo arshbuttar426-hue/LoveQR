@@ -1,0 +1,81 @@
+{
+  "capture": {
+    "exposure": "",
+    "focus": "",
+    "format": "",
+    "fps": null,
+    "iso": "",
+    "mode": "screen-capture",
+    "notes": "",
+    "resolution": "2560x1664",
+    "stabilization": "",
+    "zoom": ""
+  },
+  "capture_source": "fixture",
+  "captures": [
+    {
+      "bytes": 778250,
+      "captured_utc": null,
+      "decode_path": "captures/originals/display_hold0b.png",
+      "derived_path": null,
+      "derived_sha256": null,
+      "display_file": "display/p00_f000.png",
+      "format": "png",
+      "frame": {
+        "frame_index": 0,
+        "packet_id": 0
+      },
+      "height": 1664,
+      "kind": "still",
+      "notes": "Safari full-window display capture of player_hold.html",
+      "original_path": null,
+      "original_sha256": null,
+      "path": "captures/originals/display_hold0b.png",
+      "pos_msec": null,
+      "sha256": "f6374c718db2c66436c2909e4d659a5efb9257b1d8ad0793f097995f9ee92f40",
+      "source": "fixture",
+      "width": 2560
+    }
+  ],
+  "created_utc": "2026-11-08T08:38:05.789634+00:00",
+  "device": {
+    "camera": "none",
+    "model": "macOS screencapture (software display capture, not a camera)",
+    "notes": "",
+    "os": "macOS",
+    "serial": ""
+  },
+  "display": {
+    "brightness": "",
+    "height_px": 1664,
+    "kind": "computer",
+    "model": "Built-in Liquid Retina Display",
+    "notes": "",
+    "refresh_hz": 60.0,
+    "width_px": 2560
+  },
+  "evidence_source": "SOFTWARE FIXTURE (NOT PHYSICAL)",
+  "geometry": {
+    "ambient_lux": null,
+    "angle_deg": null,
+    "distance_mm": null,
+    "hand_held": null,
+    "lighting": "",
+    "notes": ""
+  },
+  "notes": "Fixture: actual HTML player displayed in Safari and captured with macOS screencapture. NOT camera optics.",
+  "schema": "otl-session/1",
+  "session_id": "display-capture-20261108T083805Z",
+  "status": "final",
+  "transmitter": {
+    "attached_utc": "2026-11-08T08:38:06.014437+00:00",
+    "fps": 10.0,
+    "frame_count": 255,
+    "frames_sha256": "207e0af3350f5c0b30ef593c662f0449debef40a079bf37ddd2d965d95cd7348",
+    "hold": true,
+    "payload_name": "payload.txt",
+    "payload_sha256": "829a6e465f0be0a8ae2e5eee9adb783d84591f2bf1813a20153946edce9cab2d",
+    "player_manifest": "display/player_manifest.json",
+    "player_manifest_sha256": "72dfef512833fbaeaa8fbd8b5f481b9f1002603ad448bc68c9bc9cff3f32ec50"
+  }
+}

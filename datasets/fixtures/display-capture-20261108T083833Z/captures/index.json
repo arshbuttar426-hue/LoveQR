@@ -1,0 +1,30 @@
+{
+  "captures": [
+    {
+      "bytes": 778250,
+      "captured_utc": null,
+      "decode_path": "captures/originals/display_hold0b.png",
+      "derived_path": null,
+      "derived_sha256": null,
+      "display_file": "display/p00_f000.png",
+      "format": "png",
+      "frame": {
+        "frame_index": 0,
+        "packet_id": 0
+      },
+      "height": 1664,
+      "kind": "still",
+      "notes": "Safari full-window display capture of player_hold.html",
+      "original_path": null,
+      "original_sha256": null,
+      "path": "captures/originals/display_hold0b.png",
+      "pos_msec": null,
+      "sha256": "f6374c718db2c66436c2909e4d659a5efb9257b1d8ad0793f097995f9ee92f40",
+      "source": "fixture",
+      "width": 2560
+    }
+  ],
+  "schema": "otl-captures/1",
+  "session_id": "display-capture-20261108T083833Z",
+  "updated_utc": "2026-11-08T08:38:33.546181+00:00"
+}

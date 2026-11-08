@@ -1,0 +1,128 @@
+{
+  "artifacts": {},
+  "config_defaults": {
+    "camera": {
+      "assume_cropped": true,
+      "display_fps": 60.0,
+      "exposure_us": 8000.0,
+      "fps": 30.0,
+      "height": 1350,
+      "random_phase": true,
+      "readout_direction": 1,
+      "row_time_us": 20.0,
+      "width": 1080
+    },
+    "channel": {
+      "ambient": 0.0,
+      "blur_sigma": 0.0,
+      "brightness": 1.0,
+      "gamma": 1.0,
+      "jpeg_quality": 100,
+      "motion_angle_deg": 0.0,
+      "motion_blur_px": 0,
+      "noise_sigma": 0.0,
+      "perspective": 0.0,
+      "seed": 0,
+      "vignette": 0.0
+    },
+    "compression": {
+      "enabled": true,
+      "max_literal": 255,
+      "min_match": 4,
+      "use_invert_op": true,
+      "window": 65535
+    },
+    "ecc": {
+      "interleave": true,
+      "nsym": 32
+    },
+    "protocol": {
+      "bits_per_cell": 4,
+      "blocks_per_packet": 11,
+      "cols": 6,
+      "crc_bits": 16,
+      "data_bytes_per_frame": 11,
+      "header_bits": 16,
+      "packet_frames": 255,
+      "pattern_set": "full16",
+      "rows": 5,
+      "rs_nsym": 32
+    },
+    "quick": false,
+    "receiver": {
+      "assume_cropped": true,
+      "detection_min_area_fraction": 0.15,
+      "min_contrast": 0.08,
+      "sample_radius_px": 6,
+      "threshold": 0.5,
+      "use_inversion_pair": false
+    },
+    "screen": {
+      "background": 255,
+      "border_px": 10,
+      "canvas_height": 1350,
+      "canvas_width": 1080,
+      "cols": 6,
+      "fiducial_px": 48,
+      "foreground": 0,
+      "gap_level": 255,
+      "gap_px": 8,
+      "margin_px": 90,
+      "rows": 5,
+      "supersample": 4
+    },
+    "seed": 20261108
+  },
+  "environment": {
+    "cpu_count": 10,
+    "machine": "arm64",
+    "numpy": "2.4.4",
+    "opencv": "4.13.0",
+    "otl_version": "0.1.0",
+    "pillow": "12.2.0",
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "pytest": "9.0.3",
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "simulation_only": true,
+    "timestamp_utc": "2026-11-07T22:10:18.769070+00:00",
+    "zstandard": "0.25.0"
+  },
+  "failures": [],
+  "n_trials": 13,
+  "quick": true,
+  "raw": "raw/trials.jsonl",
+  "run_id": "20261107T221018Z-912f63",
+  "simulation_only": true,
+  "spec": {
+    "classification": "OBSERVED (SIMULATED channel)",
+    "controlled": [
+      "clean optical channel",
+      "canonical layout",
+      "random frames",
+      "decoder settings"
+    ],
+    "dependent": [
+      "CRC success rate",
+      "cell accuracy",
+      "cell bit error rate",
+      "detection failures",
+      "decode time"
+    ],
+    "hypothesis": "Spatial decoding tolerates moderate resolution loss and perspective, with a measurable boundary set by cell size and the fiducial detector.",
+    "id": "E04_geometry",
+    "independent": [
+      "downscale factor",
+      "perspective amount"
+    ],
+    "procedure": [
+      "Render random frames at the canonical 1080x1350 canvas.",
+      "Apply either a downscale/upscale resolution proxy or a perspective warp.",
+      "Decode and compare with ground truth, recording detection failures separately.",
+      "Report success and accuracy against effective cell size / perspective amount."
+    ],
+    "title": "Resolution (distance proxy) and perspective (angle proxy)"
+  },
+  "wall_s": 0.4858090420020744
+}

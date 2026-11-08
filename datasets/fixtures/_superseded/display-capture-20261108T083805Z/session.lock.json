@@ -1,0 +1,9 @@
+{
+  "capture_count": 1,
+  "captures_sha256": "2b324e604b75df7d3b73c06735d691ac43f7164c021c4b173f87f0afb117efd7",
+  "evidence_source": "BLOCKED / NO PHYSICAL CAPTURE",
+  "locked_utc": "2026-11-08T08:38:09.065462+00:00",
+  "manifest_sha256": "1cb1411c03007d5116be68ae5d0f492f6a4060568d66780dcaec26dc14fc65bc",
+  "schema": "otl-session-lock/1",
+  "session_id": "display-capture-20261108T083805Z"
+}

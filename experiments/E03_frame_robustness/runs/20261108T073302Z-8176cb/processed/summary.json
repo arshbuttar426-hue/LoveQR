@@ -1,0 +1,99 @@
+{
+  "classification": "OBSERVED (SIMULATED channel)",
+  "conclusion": "A failure boundary was measured for 5 of 8 parameters (blur_sigma first failed at 16; noise_sigma first failed at 90; brightness first failed at 0.08; perspective first failed at 0.18; vignette first failed at 0.9). No failure was reached within the tested range for jpeg_quality, ambient, gamma; the per-frame photometric calibration makes global brightness, gamma and ambient offset largely irrelevant until contrast is destroyed. Blur mixes triangle interiors, noise perturbs the per-cell threshold, JPEG creates block artefacts, perspective stresses fiducial detection, and vignetting reduces corner contrast. These are SIMULATED observations, not physical camera results; the exact crossing points are in processed/summary.csv.",
+  "experiment": "E03_frame_robustness",
+  "failures": [],
+  "n_trials": 69,
+  "run_id": "20261108T073302Z-8176cb",
+  "simulation_only": true,
+  "summary": {
+    "failure_boundaries": {
+      "ambient": {
+        "first_failing_value": null,
+        "last_full_success_value": 200.0,
+        "min_success_rate": 1.0,
+        "success_rate_at_first_failure": null
+      },
+      "blur_sigma": {
+        "first_failing_value": 16.0,
+        "last_full_success_value": 12.0,
+        "min_success_rate": 0.16666666666666666,
+        "success_rate_at_first_failure": 0.16666666666666666
+      },
+      "brightness": {
+        "first_failing_value": 0.08,
+        "last_full_success_value": 0.15,
+        "min_success_rate": 0.0,
+        "success_rate_at_first_failure": 0.0
+      },
+      "gamma": {
+        "first_failing_value": null,
+        "last_full_success_value": 2.8,
+        "min_success_rate": 1.0,
+        "success_rate_at_first_failure": null
+      },
+      "jpeg_quality": {
+        "first_failing_value": null,
+        "last_full_success_value": 5.0,
+        "min_success_rate": 1.0,
+        "success_rate_at_first_failure": null
+      },
+      "noise_sigma": {
+        "first_failing_value": 90.0,
+        "last_full_success_value": 60.0,
+        "min_success_rate": 0.9166666666666666,
+        "success_rate_at_first_failure": 0.9166666666666666
+      },
+      "perspective": {
+        "first_failing_value": 0.18,
+        "last_full_success_value": 0.12,
+        "min_success_rate": 0.0,
+        "success_rate_at_first_failure": 0.0
+      },
+      "vignette": {
+        "first_failing_value": 0.9,
+        "last_full_success_value": 0.8,
+        "min_success_rate": 0.5,
+        "success_rate_at_first_failure": 0.5
+      }
+    },
+    "frames_per_level": 12,
+    "parameters": {
+      "ambient": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0
+      },
+      "blur_sigma": {
+        "mean_success_rate": 0.9242424242424242,
+        "min_success_rate": 0.16666666666666666
+      },
+      "brightness": {
+        "mean_success_rate": 0.8888888888888888,
+        "min_success_rate": 0.0
+      },
+      "gamma": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0
+      },
+      "jpeg_quality": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0
+      },
+      "noise_sigma": {
+        "mean_success_rate": 0.9907407407407407,
+        "min_success_rate": 0.9166666666666666
+      },
+      "perspective": {
+        "mean_success_rate": 0.75,
+        "min_success_rate": 0.0
+      },
+      "vignette": {
+        "mean_success_rate": 0.9375,
+        "min_success_rate": 0.5
+      }
+    },
+    "success_rule": "frame CRC-16 matches after spatial decode"
+  },
+  "title": "Single-frame decode robustness sweep",
+  "wall_s": 8.621281500003533
+}

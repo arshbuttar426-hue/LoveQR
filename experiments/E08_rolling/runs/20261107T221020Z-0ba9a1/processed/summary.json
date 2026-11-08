@@ -1,0 +1,14 @@
+{
+  "classification": "OBSERVED (SIMULATED rolling shutter) + THEORETICAL (timing)",
+  "conclusion": "The run did not complete. Raw trials written before the failure are retained; see failures and the traceback in manifest.json.",
+  "experiment": "E08_rolling",
+  "failures": [
+    "ChannelError: [E_CHANNEL] channel.apply_channel: channel expects a single-channel image {'shape': (1350, 1350, 1080)}"
+  ],
+  "n_trials": 51,
+  "run_id": "20261107T221020Z-0ba9a1",
+  "simulation_only": true,
+  "summary": {},
+  "title": "Temporal blink IDs under a rolling-shutter capture",
+  "wall_s": 637.6486619170028
+}

@@ -1,0 +1,4 @@
+trial,crc_ok_frames,cell_accuracy,render_deterministic,decode_deterministic,mean_render_ms,p95_render_ms,mean_decode_ms,p95_decode_ms,pipeline_deterministic,frames_dropped,simulated_wall_s,render_ms,decode_ms,decode_p50_ms,decode_p95_ms,cpu_percent,max_rss_kb
+0,40,1.0,1.0,1.0,0.17921649960044306,0.21773364351247435,6.004252099228324,6.349347595096332,,,,,,,,,
+1,,,,,,,,,1.0,6,1.7783490839938167,,,,,,
+2,,,,,,,,,,,,0.16088750002381857,7.174188550197869,5.961833499895874,6.349347595096332,36706.46836862934,2092896

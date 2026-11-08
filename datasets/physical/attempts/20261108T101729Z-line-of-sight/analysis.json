@@ -1,0 +1,457 @@
+{
+  "commands": {
+    "black": "ffmpeg -f avfoundation -pixel_format uyvy422 -framerate 30 -video_size 1280x720 -i \"<device>\" -frames:v 10 black/f_%03d.png",
+    "player": "ffmpeg -f avfoundation -pixel_format uyvy422 -framerate 30 -video_size 1280x720 -i \"1\" -frames:v 10 player_device1/f_%03d.png",
+    "white": "ffmpeg -f avfoundation -pixel_format uyvy422 -framerate 30 -video_size 1280x720 -i \"<device>\" -frames:v 10 white/f_%03d.png"
+  },
+  "conclusion": "No camera produced a decodable view of the player. Device 0 sees the user/room; device 1 sees the room/ceiling and only responds to the display through room-light/auto-exposure changes. No physical frame was captured.",
+  "conditions": {
+    "black_device0": {
+      "count": 10,
+      "frames": [
+        {
+          "file": "black_device0/f_001.png",
+          "max": 255,
+          "mean": 107.08960723876953,
+          "sha256": "193afe2695a6931b794a28bf86715cead3f08585ac287e7704b4524a5362998c",
+          "std": 50.93202590942383
+        },
+        {
+          "file": "black_device0/f_002.png",
+          "max": 255,
+          "mean": 106.26264190673828,
+          "sha256": "4b9176aa33cc2e6b35cdc44b7e8cbe1abdc45084fb5617a9d67b77975b964fb4",
+          "std": 51.58795166015625
+        },
+        {
+          "file": "black_device0/f_003.png",
+          "max": 255,
+          "mean": 105.28679656982422,
+          "sha256": "72707b5e007b5d2cd5b8b2ce844aed582c9df0a5cc14bda08d79e117efcbe248",
+          "std": 52.0671272277832
+        },
+        {
+          "file": "black_device0/f_004.png",
+          "max": 255,
+          "mean": 104.50968933105469,
+          "sha256": "1e149aad5436ee08bd65c68c07ea30686fb99e41431be720a85616deaa19f9d1",
+          "std": 52.39153289794922
+        },
+        {
+          "file": "black_device0/f_005.png",
+          "max": 255,
+          "mean": 104.27057647705078,
+          "sha256": "075b30ae0104581b7ffccdc82c56e544393aad896a8fa4a5ce03cbfa10040579",
+          "std": 52.54710388183594
+        },
+        {
+          "file": "black_device0/f_006.png",
+          "max": 255,
+          "mean": 103.30467224121094,
+          "sha256": "1a0948552c7b081b20a6ca8428e84733908a4feb43ff22042901013db8e90fff",
+          "std": 53.573455810546875
+        },
+        {
+          "file": "black_device0/f_007.png",
+          "max": 255,
+          "mean": 104.26671600341797,
+          "sha256": "256f5ab8e0fdf77ab72191eda4c97f2352e86570f903dbaa7745d34c288af08c",
+          "std": 53.64455795288086
+        },
+        {
+          "file": "black_device0/f_008.png",
+          "max": 255,
+          "mean": 105.69691467285156,
+          "sha256": "b55f36c2dd4b130ba0e0476a5c43893b71a85453fba45e30dfe156c00fd460b2",
+          "std": 53.83644485473633
+        },
+        {
+          "file": "black_device0/f_009.png",
+          "max": 255,
+          "mean": 107.33989715576172,
+          "sha256": "79597b00c44ab1a02e9068fe879e80befcaff93105727ddf2c994cb9de234191",
+          "std": 54.123146057128906
+        },
+        {
+          "file": "black_device0/f_010.png",
+          "max": 255,
+          "mean": 109.69084930419922,
+          "sha256": "e2804f8b86931145b33307f345278376340e2075d2d1b7949c58f1c360b093fe",
+          "std": 54.155845642089844
+        }
+      ],
+      "mean": 105.77183609008789
+    },
+    "black_device1": {
+      "count": 10,
+      "frames": [
+        {
+          "file": "black_device1/f_001.png",
+          "max": 254,
+          "mean": 132.36978149414062,
+          "sha256": "dce410ce27f84e12ce9bf7cd2725b12066b12f70ab3082ff41089c36760c43fb",
+          "std": 55.857826232910156
+        },
+        {
+          "file": "black_device1/f_002.png",
+          "max": 254,
+          "mean": 132.36978149414062,
+          "sha256": "dce410ce27f84e12ce9bf7cd2725b12066b12f70ab3082ff41089c36760c43fb",
+          "std": 55.857826232910156
+        },
+        {
+          "file": "black_device1/f_003.png",
+          "max": 254,
+          "mean": 132.36978149414062,
+          "sha256": "dce410ce27f84e12ce9bf7cd2725b12066b12f70ab3082ff41089c36760c43fb",
+          "std": 55.857826232910156
+        },
+        {
+          "file": "black_device1/f_004.png",
+          "max": 254,
+          "mean": 132.36978149414062,
+          "sha256": "dce410ce27f84e12ce9bf7cd2725b12066b12f70ab3082ff41089c36760c43fb",
+          "std": 55.857826232910156
+        },
+        {
+          "file": "black_device1/f_005.png",
+          "max": 254,
+          "mean": 132.36978149414062,
+          "sha256": "dce410ce27f84e12ce9bf7cd2725b12066b12f70ab3082ff41089c36760c43fb",
+          "std": 55.857826232910156
+        },
+        {
+          "file": "black_device1/f_006.png",
+          "max": 254,
+          "mean": 131.58673095703125,
+          "sha256": "0074cc84beb13f8ae8db7d582c7886ffb20ad59a2924d11e828ce488e6b70dde",
+          "std": 56.070560455322266
+        },
+        {
+          "file": "black_device1/f_007.png",
+          "max": 254,
+          "mean": 131.58673095703125,
+          "sha256": "0074cc84beb13f8ae8db7d582c7886ffb20ad59a2924d11e828ce488e6b70dde",
+          "std": 56.070560455322266
+        },
+        {
+          "file": "black_device1/f_008.png",
+          "max": 254,
+          "mean": 129.93214416503906,
+          "sha256": "f464545378bc567057cb78f5e1a6aface61f4a38764e7b4a61f4c20f6223b8ed",
+          "std": 56.205806732177734
+        },
+        {
+          "file": "black_device1/f_009.png",
+          "max": 251,
+          "mean": 128.13150024414062,
+          "sha256": "0ee5b0961746da88320f9536381ab69db7ea2fc3d711c792d2a079380c3bce92",
+          "std": 54.406978607177734
+        },
+        {
+          "file": "black_device1/f_010.png",
+          "max": 251,
+          "mean": 128.13150024414062,
+          "sha256": "0ee5b0961746da88320f9536381ab69db7ea2fc3d711c792d2a079380c3bce92",
+          "std": 54.406978607177734
+        }
+      ],
+      "mean": 131.1217514038086
+    },
+    "player_device1": {
+      "count": 10,
+      "frames": [
+        {
+          "file": "player_device1/f_001.png",
+          "max": 223,
+          "mean": 123.38348388671875,
+          "sha256": "fbbf43f71dfb82bbd8ae88cb068c8a168c1c69f521e0d63aa06db243e0b9d851",
+          "std": 39.17301940917969
+        },
+        {
+          "file": "player_device1/f_002.png",
+          "max": 225,
+          "mean": 123.18216705322266,
+          "sha256": "d42959038949ea612985895e33c8f0b72ecb6c100f31f1c53d7c102f7732b09b",
+          "std": 40.2407341003418
+        },
+        {
+          "file": "player_device1/f_003.png",
+          "max": 225,
+          "mean": 123.18216705322266,
+          "sha256": "d42959038949ea612985895e33c8f0b72ecb6c100f31f1c53d7c102f7732b09b",
+          "std": 40.2407341003418
+        },
+        {
+          "file": "player_device1/f_004.png",
+          "max": 228,
+          "mean": 122.45777130126953,
+          "sha256": "12090b05e161564fff90d3f8debf18b21953d8f2b99bc432d96adde25792fde3",
+          "std": 40.64373779296875
+        },
+        {
+          "file": "player_device1/f_005.png",
+          "max": 228,
+          "mean": 121.5936050415039,
+          "sha256": "1c22a29f5bd013451de5f56b7e92a3c772f1049b2558736896b890a744eae100",
+          "std": 40.83502197265625
+        },
+        {
+          "file": "player_device1/f_006.png",
+          "max": 229,
+          "mean": 120.94562530517578,
+          "sha256": "5f121d2a2a6f76b996d1b126c4d819dd43d85919ee975a0e9c08577fef93fb52",
+          "std": 41.04690933227539
+        },
+        {
+          "file": "player_device1/f_007.png",
+          "max": 234,
+          "mean": 120.54657745361328,
+          "sha256": "850b32ae6e0cf19ccf451faa5294a85600ecd9957eff66009a7869d2e6462e71",
+          "std": 41.097862243652344
+        },
+        {
+          "file": "player_device1/f_008.png",
+          "max": 235,
+          "mean": 120.12405395507812,
+          "sha256": "5654fb755d5c0eba33f30c3b351b5aad312b0662f614c0a82d0ab01c9b03ce3e",
+          "std": 41.555450439453125
+        },
+        {
+          "file": "player_device1/f_009.png",
+          "max": 234,
+          "mean": 119.3448257446289,
+          "sha256": "9f81f150040acdc9d9c7b143cf8edff552e6c6a6ce92d2c99b8e4ce3604243e2",
+          "std": 42.70464324951172
+        },
+        {
+          "file": "player_device1/f_010.png",
+          "max": 238,
+          "mean": 118.65847778320312,
+          "sha256": "53741f943021889db0cee962a94d643bceed92828f748b44da482654f4cff09f",
+          "std": 43.11375427246094
+        }
+      ],
+      "mean": 121.34187545776368
+    },
+    "white_device0": {
+      "count": 10,
+      "frames": [
+        {
+          "file": "white_device0/f_001.png",
+          "max": 255,
+          "mean": 111.46111297607422,
+          "sha256": "ee5533a142701b19373e870581868f07f81ef89abfa4b9965197ae2c8a2f7a43",
+          "std": 52.46342086791992
+        },
+        {
+          "file": "white_device0/f_002.png",
+          "max": 255,
+          "mean": 110.69343566894531,
+          "sha256": "bb8733055d3f02c254c035d4206e639c3c1081f4458a723eaab674da35b6a334",
+          "std": 52.91593551635742
+        },
+        {
+          "file": "white_device0/f_003.png",
+          "max": 255,
+          "mean": 109.76421356201172,
+          "sha256": "dce2ca40b0c9fd75529db0c4a8083f3d50c8a83377320b8ff994bd1686b8e5ca",
+          "std": 53.27065658569336
+        },
+        {
+          "file": "white_device0/f_004.png",
+          "max": 255,
+          "mean": 108.84022521972656,
+          "sha256": "82fcf6bb5d821f8c9a319b38efef55c3c0caae9613b716d6cd512323f227a0ca",
+          "std": 53.425716400146484
+        },
+        {
+          "file": "white_device0/f_005.png",
+          "max": 255,
+          "mean": 108.484375,
+          "sha256": "052f82845ed9f29bb6e1a0653236c1b51b782f8436c892613b8a3e63a1e4c85d",
+          "std": 53.552818298339844
+        },
+        {
+          "file": "white_device0/f_006.png",
+          "max": 255,
+          "mean": 108.44498443603516,
+          "sha256": "fa2f49e3f8e2cb0858cc02ac9fd06ea590ece95aed678d93fc78acde72f79cdb",
+          "std": 53.59538650512695
+        },
+        {
+          "file": "white_device0/f_007.png",
+          "max": 255,
+          "mean": 107.55719757080078,
+          "sha256": "7c1ef3ab3341d6e6e50ad81545e321b7b0d56774482206ec7f81921e2481bf20",
+          "std": 54.54488754272461
+        },
+        {
+          "file": "white_device0/f_008.png",
+          "max": 255,
+          "mean": 108.57239532470703,
+          "sha256": "dbd35ec4836a3883469d1818972f7a4c0a25c14f6f568661a2593a6aa937ccfa",
+          "std": 54.55437469482422
+        },
+        {
+          "file": "white_device0/f_009.png",
+          "max": 255,
+          "mean": 109.45243072509766,
+          "sha256": "f61797c0cfd12505d6e3fa65ddfd61c348d132b634af0f706524f7ec83097bb0",
+          "std": 54.775943756103516
+        },
+        {
+          "file": "white_device0/f_010.png",
+          "max": 255,
+          "mean": 110.67597961425781,
+          "sha256": "86252e6c5f37553d881b6809537abb746e21d1f48800bfb6a778199f2b04861a",
+          "std": 54.74921798706055
+        }
+      ],
+      "mean": 109.39463500976562
+    },
+    "white_device1": {
+      "count": 10,
+      "frames": [
+        {
+          "file": "white_device1/f_001.png",
+          "max": 150,
+          "mean": 22.303762435913086,
+          "sha256": "8aef3562aa31cce18d2b22ce35b4718b36fe177f561c7f51b6f53d644e3f5799",
+          "std": 30.402856826782227
+        },
+        {
+          "file": "white_device1/f_002.png",
+          "max": 149,
+          "mean": 22.206321716308594,
+          "sha256": "af0cefba2d3cd18e73035b62afde0734290bced596fbd6e31fef5eba4caee7a2",
+          "std": 29.959930419921875
+        },
+        {
+          "file": "white_device1/f_003.png",
+          "max": 149,
+          "mean": 22.070186614990234,
+          "sha256": "1987f18fc301269da4ad209c136d3749bc0593763853cb195ba358b70daecc35",
+          "std": 29.509754180908203
+        },
+        {
+          "file": "white_device1/f_004.png",
+          "max": 149,
+          "mean": 22.023008346557617,
+          "sha256": "046ac7758ed369852b07dfd0429b7d8fa933282e9338c1cde97b52b790cc6ee1",
+          "std": 29.12176513671875
+        },
+        {
+          "file": "white_device1/f_005.png",
+          "max": 149,
+          "mean": 22.01697540283203,
+          "sha256": "3c2173bc7c655395a6955cafe9af8e527f10c2ad9072121aad6147c8c24d0e5e",
+          "std": 28.78021812438965
+        },
+        {
+          "file": "white_device1/f_006.png",
+          "max": 148,
+          "mean": 21.922252655029297,
+          "sha256": "97a78cd13d8b425143e5585a9f3ed23afe1571683d52bc74a9b4d853e9534145",
+          "std": 28.250568389892578
+        },
+        {
+          "file": "white_device1/f_007.png",
+          "max": 147,
+          "mean": 22.005416870117188,
+          "sha256": "a4c6303960fcf7a347eb1c502a8e83b4641b6c69c2f24542cf3deeb7be33d951",
+          "std": 27.974733352661133
+        },
+        {
+          "file": "white_device1/f_008.png",
+          "max": 148,
+          "mean": 21.999216079711914,
+          "sha256": "1fc8a3556b27d0e549e450d771e24479e7d9c4232128f48a489b2dd2b5c8644a",
+          "std": 27.736164093017578
+        },
+        {
+          "file": "white_device1/f_009.png",
+          "max": 147,
+          "mean": 21.85865592956543,
+          "sha256": "8b2dc342b9244b4ea357c9cf3d2cd5f66247f22ebfdba0e79b141cf631e534b9",
+          "std": 27.311504364013672
+        },
+        {
+          "file": "white_device1/f_010.png",
+          "max": 145,
+          "mean": 21.756467819213867,
+          "sha256": "8549c9d9e0ec97fa8e2a8ff814448712f83439ea9f42e4e424d3e45bfe280879",
+          "std": 26.9783878326416
+        }
+      ],
+      "mean": 22.016226387023927
+    },
+    "white_vs_black_device0": {
+      "interpretation": "Large global change is consistent with room-light/auto-exposure, not a resolved display; a direct view would show the fiducials and high local contrast.",
+      "max_abs_difference": 189.09999084472656,
+      "mean_abs_difference": 4.837497711181641
+    },
+    "white_vs_black_device1": {
+      "interpretation": "Large global change is consistent with room-light/auto-exposure, not a resolved display; a direct view would show the fiducials and high local contrast.",
+      "max_abs_difference": 200.90000915527344,
+      "mean_abs_difference": 109.1056137084961
+    }
+  },
+  "created_utc": "2026-11-08T10:17:29.815525+00:00",
+  "files": {
+    "black_device0/f_001.png": "193afe2695a6931b794a28bf86715cead3f08585ac287e7704b4524a5362998c",
+    "black_device0/f_002.png": "4b9176aa33cc2e6b35cdc44b7e8cbe1abdc45084fb5617a9d67b77975b964fb4",
+    "black_device0/f_003.png": "72707b5e007b5d2cd5b8b2ce844aed582c9df0a5cc14bda08d79e117efcbe248",
+    "black_device0/f_004.png": "1e149aad5436ee08bd65c68c07ea30686fb99e41431be720a85616deaa19f9d1",
+    "black_device0/f_005.png": "075b30ae0104581b7ffccdc82c56e544393aad896a8fa4a5ce03cbfa10040579",
+    "black_device0/f_006.png": "1a0948552c7b081b20a6ca8428e84733908a4feb43ff22042901013db8e90fff",
+    "black_device0/f_007.png": "256f5ab8e0fdf77ab72191eda4c97f2352e86570f903dbaa7745d34c288af08c",
+    "black_device0/f_008.png": "b55f36c2dd4b130ba0e0476a5c43893b71a85453fba45e30dfe156c00fd460b2",
+    "black_device0/f_009.png": "79597b00c44ab1a02e9068fe879e80befcaff93105727ddf2c994cb9de234191",
+    "black_device0/f_010.png": "e2804f8b86931145b33307f345278376340e2075d2d1b7949c58f1c360b093fe",
+    "black_device1/f_001.png": "dce410ce27f84e12ce9bf7cd2725b12066b12f70ab3082ff41089c36760c43fb",
+    "black_device1/f_002.png": "dce410ce27f84e12ce9bf7cd2725b12066b12f70ab3082ff41089c36760c43fb",
+    "black_device1/f_003.png": "dce410ce27f84e12ce9bf7cd2725b12066b12f70ab3082ff41089c36760c43fb",
+    "black_device1/f_004.png": "dce410ce27f84e12ce9bf7cd2725b12066b12f70ab3082ff41089c36760c43fb",
+    "black_device1/f_005.png": "dce410ce27f84e12ce9bf7cd2725b12066b12f70ab3082ff41089c36760c43fb",
+    "black_device1/f_006.png": "0074cc84beb13f8ae8db7d582c7886ffb20ad59a2924d11e828ce488e6b70dde",
+    "black_device1/f_007.png": "0074cc84beb13f8ae8db7d582c7886ffb20ad59a2924d11e828ce488e6b70dde",
+    "black_device1/f_008.png": "f464545378bc567057cb78f5e1a6aface61f4a38764e7b4a61f4c20f6223b8ed",
+    "black_device1/f_009.png": "0ee5b0961746da88320f9536381ab69db7ea2fc3d711c792d2a079380c3bce92",
+    "black_device1/f_010.png": "0ee5b0961746da88320f9536381ab69db7ea2fc3d711c792d2a079380c3bce92",
+    "player_device1/f_001.png": "fbbf43f71dfb82bbd8ae88cb068c8a168c1c69f521e0d63aa06db243e0b9d851",
+    "player_device1/f_002.png": "d42959038949ea612985895e33c8f0b72ecb6c100f31f1c53d7c102f7732b09b",
+    "player_device1/f_003.png": "d42959038949ea612985895e33c8f0b72ecb6c100f31f1c53d7c102f7732b09b",
+    "player_device1/f_004.png": "12090b05e161564fff90d3f8debf18b21953d8f2b99bc432d96adde25792fde3",
+    "player_device1/f_005.png": "1c22a29f5bd013451de5f56b7e92a3c772f1049b2558736896b890a744eae100",
+    "player_device1/f_006.png": "5f121d2a2a6f76b996d1b126c4d819dd43d85919ee975a0e9c08577fef93fb52",
+    "player_device1/f_007.png": "850b32ae6e0cf19ccf451faa5294a85600ecd9957eff66009a7869d2e6462e71",
+    "player_device1/f_008.png": "5654fb755d5c0eba33f30c3b351b5aad312b0662f614c0a82d0ab01c9b03ce3e",
+    "player_device1/f_009.png": "9f81f150040acdc9d9c7b143cf8edff552e6c6a6ce92d2c99b8e4ce3604243e2",
+    "player_device1/f_010.png": "53741f943021889db0cee962a94d643bceed92828f748b44da482654f4cff09f",
+    "stimulus/black.html": "6116697ee50b306c1adab3b032c7f3dfbf6a4856b14377a35cb1ba88ead38bc1",
+    "stimulus/white.html": "899b9651b6166183336e0e9b05ef554f7d13d3502c8fefb245d1bd11e7fd4bb3",
+    "white_device0/f_001.png": "ee5533a142701b19373e870581868f07f81ef89abfa4b9965197ae2c8a2f7a43",
+    "white_device0/f_002.png": "bb8733055d3f02c254c035d4206e639c3c1081f4458a723eaab674da35b6a334",
+    "white_device0/f_003.png": "dce2ca40b0c9fd75529db0c4a8083f3d50c8a83377320b8ff994bd1686b8e5ca",
+    "white_device0/f_004.png": "82fcf6bb5d821f8c9a319b38efef55c3c0caae9613b716d6cd512323f227a0ca",
+    "white_device0/f_005.png": "052f82845ed9f29bb6e1a0653236c1b51b782f8436c892613b8a3e63a1e4c85d",
+    "white_device0/f_006.png": "fa2f49e3f8e2cb0858cc02ac9fd06ea590ece95aed678d93fc78acde72f79cdb",
+    "white_device0/f_007.png": "7c1ef3ab3341d6e6e50ad81545e321b7b0d56774482206ec7f81921e2481bf20",
+    "white_device0/f_008.png": "dbd35ec4836a3883469d1818972f7a4c0a25c14f6f568661a2593a6aa937ccfa",
+    "white_device0/f_009.png": "f61797c0cfd12505d6e3fa65ddfd61c348d132b634af0f706524f7ec83097bb0",
+    "white_device0/f_010.png": "86252e6c5f37553d881b6809537abb746e21d1f48800bfb6a778199f2b04861a",
+    "white_device1/f_001.png": "8aef3562aa31cce18d2b22ce35b4718b36fe177f561c7f51b6f53d644e3f5799",
+    "white_device1/f_002.png": "af0cefba2d3cd18e73035b62afde0734290bced596fbd6e31fef5eba4caee7a2",
+    "white_device1/f_003.png": "1987f18fc301269da4ad209c136d3749bc0593763853cb195ba358b70daecc35",
+    "white_device1/f_004.png": "046ac7758ed369852b07dfd0429b7d8fa933282e9338c1cde97b52b790cc6ee1",
+    "white_device1/f_005.png": "3c2173bc7c655395a6955cafe9af8e527f10c2ad9072121aad6147c8c24d0e5e",
+    "white_device1/f_006.png": "97a78cd13d8b425143e5585a9f3ed23afe1571683d52bc74a9b4d853e9534145",
+    "white_device1/f_007.png": "a4c6303960fcf7a347eb1c502a8e83b4641b6c69c2f24542cf3deeb7be33d951",
+    "white_device1/f_008.png": "1fc8a3556b27d0e549e450d771e24479e7d9c4232128f48a489b2dd2b5c8644a",
+    "white_device1/f_009.png": "8b2dc342b9244b4ea357c9cf3d2cd5f66247f22ebfdba0e79b141cf631e534b9",
+    "white_device1/f_010.png": "8549c9d9e0ec97fa8e2a8ff814448712f83439ea9f42e4e424d3e45bfe280879"
+  },
+  "purpose": "Determine whether any attached camera has a direct line of sight to the built-in display.",
+  "schema": "otl-line-of-sight-probe/1"
+}

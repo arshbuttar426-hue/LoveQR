@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/Users/arshbuttar/OPTICAL_TRANSMISSION_LAB/experiments/harness.py", line 219, in run_experiment
+    spec.run(ctx)
+    ~~~~~~~~^^^^^
+  File "/Users/arshbuttar/OPTICAL_TRANSMISSION_LAB/experiments/e08_rolling.py", line 85, in run
+    capture, info = _capture(camera, id_index, case["noise"], rng)
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/arshbuttar/OPTICAL_TRANSMISSION_LAB/experiments/e08_rolling.py", line 48, in _capture
+    image=apply_channel(
+          ~~~~~~~~~~~~~^
+        capture.image,
+        ^^^^^^^^^^^^^^
+        ChannelConfig(noise_sigma=noise),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        seed=int(rng.integers(0, 2**31 - 1)),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "/Users/arshbuttar/OPTICAL_TRANSMISSION_LAB/otl/rx/channel.py", line 124, in apply_channel
+    raise ChannelError(
+    ...<4 lines>...
+    )
+otl.errors.ChannelError: [E_CHANNEL] channel.apply_channel: channel expects a single-channel image {'shape': (1350, 1350, 1080)}

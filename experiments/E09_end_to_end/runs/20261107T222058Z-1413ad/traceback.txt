@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "/Users/arshbuttar/OPTICAL_TRANSMISSION_LAB/experiments/harness.py", line 219, in run_experiment
+    spec.run(ctx)
+    ~~~~~~~~^^^^^
+  File "/Users/arshbuttar/OPTICAL_TRANSMISSION_LAB/experiments/e09_end_to_end.py", line 51, in run
+    result = simulate_transfer(
+        data,
+    ...<4 lines>...
+        seed=cfg.seed,
+    )
+  File "/Users/arshbuttar/OPTICAL_TRANSMISSION_LAB/otl/pipeline.py", line 109, in simulate_transfer
+    header, packets = build_file(
+                      ~~~~~~~~~~^
+        compressed,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        nsym=cfg.ecc.nsym,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/arshbuttar/OPTICAL_TRANSMISSION_LAB/otl/protocol/packet.py", line 386, in build_file
+    header = FileHeader(
+        version=FILE_VERSION,
+    ...<6 lines>...
+        name=name,
+    )
+  File "<string>", line 11, in __init__
+  File "/Users/arshbuttar/OPTICAL_TRANSMISSION_LAB/otl/protocol/packet.py", line 83, in __post_init__
+    raise ProtocolError(
+    ...<5 lines>...
+    )
+otl.errors.ProtocolError: [E_PROTOCOL] protocol.FileHeader: file name too long for the header {'name': 'random_100.bin', 'max_bytes': 13}

@@ -1,0 +1,18 @@
+# Reproducible environment for OPTICAL_TRANSMISSION_LAB.
+# Captured from the development host on 2026-11-08 (Python 3.14.7, macOS arm64).
+# Install with: python3 -m pip install -r requirements.lock
+#
+# Direct runtime dependencies
+numpy==2.4.4
+opencv-python==4.13.0.92
+pillow==12.2.0
+zstandard==0.25.0
+#
+# Test dependency and its transitive requirements
+pytest==9.0.3
+iniconfig==2.3.0
+packaging==26.2
+pluggy==1.6.0
+#
+# Build backend (needed for `pip install -e .`)
+setuptools==81.0.0

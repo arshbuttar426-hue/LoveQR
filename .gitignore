@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# M11 staging is regenerable
+datasets/physical/m11-staging/
+
+# Raw physical evidence is retained on disk, not in plain git.
+# Hashes are in each session's captures/index.jsonl and session.lock.json.
+datasets/physical/*/captures/frames/
+datasets/physical/*/captures/originals/
+datasets/physical/*/display/*.png
+datasets/physical/attempts/**/originals/
+datasets/physical/attempts/**/frames/
+
+# Large media anywhere else in the evidence tree
+datasets/physical/**/*.mp4
+datasets/physical/**/*.mov

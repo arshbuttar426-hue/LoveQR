@@ -1,0 +1,666 @@
+# E13_packet_utilisation — M11 packet utilisation optimisation
+
+- Run: `20261108T125654Z-e5001c`
+- Classification: **PHYSICAL (camera capture) + SOFTWARE (packet/RS validation)**
+- Evidence source: **PHYSICAL / CAMERA CAPTURE**
+- Device: **iPhone14,2 (Continuity Camera, 'Arsh Camera')**
+- Trials: 12
+- Wall time: 214.04 s
+- Quick mode: False
+
+## Hypothesis
+
+The 11.99% wire-packet fill is unused payload capacity, not protocol loss. Filling the packet with useful bytes, bundling logical payloads, choosing raw/compressed adaptively, using the OTL1 dictionary on repeated data and sizing RS parity to the measured channel can raise net application throughput while keeping SHA-256 exact reconstruction.
+
+## Controlled variables
+
+- frozen frame format, renderer, player and decoder geometry
+- 255 frames per packet and 11 bytes per frame
+- application payload and manifest hashes
+
+## Independent variables
+
+- packet fill
+- bundle container
+- file header size
+- compression policy
+- RS nsym
+
+## Dependent variables
+
+- application throughput
+- packet fill
+- frame delivery
+- erasures and RS corrections
+- SHA-256 exact reconstruction
+
+## Procedure
+
+1. Build the frozen reference and five deterministic M11 arms.
+2. Round-trip every arm through the real packet, RS and container code.
+3. Render frames and capture one locked camera session per measured arm.
+4. Decode captured frames, verify the wire and application SHA-256, and measure rates from the observed display period.
+5. Compare each arm with the frozen reference and report measured values separately from projections.
+
+## Experiment metadata
+
+```json
+{
+  "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+  "failed_sessions": [
+    "m11-a1-fill-adaptive-20261108T122602Z"
+  ],
+  "note": "E13 analyses locked m11-* sessions read-only and never edits a session or earlier run. Software arms without a locked physical session remain software observations.",
+  "sessions": [
+    "m11-a0-reference-20261108T122331Z",
+    "m11-a1-fill-adaptive-20261108T122956Z",
+    "m11-a2-bundle-20261108T123222Z",
+    "m11-a3-dictionary-20261108T123444Z",
+    "m11-a5-rs24-20261108T123758Z"
+  ]
+}
+```
+
+## Processed results
+
+```json
+{
+  "comparisons_physical": [
+    {
+      "application_bps": 99.44103628852598,
+      "application_ratio": 1.0,
+      "arm_id": "A0_reference",
+      "corrected_symbols": 8,
+      "erased_frames": 8,
+      "name": "A0_reference_vs_reference",
+      "packet_fill_payload": 0.11985324092947411,
+      "reference_application_bps": 99.44103628852598,
+      "reference_packet_fill_wire": 0.11985324092947411,
+      "rs_nsym": 32,
+      "session_id": "m11-a0-reference-20261108T122331Z"
+    },
+    {
+      "application_bps": 759.4534664180485,
+      "application_ratio": 7.6372239747634065,
+      "arm_id": "A1_fill_adaptive",
+      "corrected_symbols": 66,
+      "erased_frames": 6,
+      "name": "A1_fill_adaptive_vs_reference",
+      "packet_fill_payload": 0.9869547492865879,
+      "reference_application_bps": 99.44103628852598,
+      "reference_packet_fill_wire": 0.11985324092947411,
+      "rs_nsym": 32,
+      "session_id": "m11-a1-fill-adaptive-20261108T122956Z"
+    },
+    {
+      "application_bps": 715.2225953875054,
+      "application_ratio": 7.192429022082019,
+      "arm_id": "A2_bundle",
+      "corrected_symbols": 77,
+      "erased_frames": 7,
+      "name": "A2_bundle_vs_reference",
+      "packet_fill_payload": 0.9624949041989401,
+      "reference_application_bps": 99.44103628852598,
+      "reference_packet_fill_wire": 0.11985324092947411,
+      "rs_nsym": 32,
+      "session_id": "m11-a2-bundle-20261108T123222Z"
+    },
+    {
+      "application_bps": 45705.63931290227,
+      "application_ratio": 459.62553306753927,
+      "arm_id": "A3_dictionary",
+      "corrected_symbols": 0,
+      "erased_frames": 0,
+      "name": "A3_dictionary_vs_reference",
+      "packet_fill_payload": 0.9865470852017937,
+      "reference_application_bps": 99.44103628852598,
+      "reference_packet_fill_wire": 0.11985324092947411,
+      "rs_nsym": 32,
+      "session_id": "m11-a3-dictionary-20261108T123444Z"
+    },
+    {
+      "application_bps": 792.3913491003678,
+      "application_ratio": 7.968454258675078,
+      "arm_id": "A5_rs24",
+      "corrected_symbols": 110,
+      "erased_frames": 10,
+      "name": "A5_rs24_vs_reference",
+      "packet_fill_payload": 0.9940968122786304,
+      "reference_application_bps": 99.44103628852598,
+      "reference_packet_fill_wire": 0.11985324092947411,
+      "rs_nsym": 24,
+      "session_id": "m11-a5-rs24-20261108T123758Z"
+    },
+    {
+      "application_ratio": 1.043370508054523,
+      "left_application_bps": 792.3913491003678,
+      "name": "A5_rs24_vs_A1_rs32_physical",
+      "note": "Same 255 frames; A5 uses the larger RS(255,231) data region.",
+      "right_application_bps": 759.4534664180485
+    }
+  ],
+  "comparisons_software": [
+    {
+      "application_ratio": 7.6372239747634065,
+      "left": "A1_fill_adaptive",
+      "left_application_bps": 759.5294117647059,
+      "left_packet_fill": 0.9869547492865879,
+      "name": "A1_fill_adaptive_vs_A0",
+      "note": "Software-encoded exact comparison at the same 10 fps.",
+      "right": "A0_reference",
+      "right_application_bps": 99.45098039215686,
+      "right_packet_fill": 0.11985324092947411
+    },
+    {
+      "application_ratio": 7.192429022082019,
+      "left": "A2_bundle",
+      "left_application_bps": 715.2941176470588,
+      "left_packet_fill": 0.9624949041989401,
+      "name": "A2_bundle_vs_A0",
+      "note": "Software-encoded exact comparison at the same 10 fps.",
+      "right": "A0_reference",
+      "right_application_bps": 99.45098039215686,
+      "right_packet_fill": 0.11985324092947411
+    },
+    {
+      "application_ratio": 459.763406940063,
+      "left": "A3_dictionary",
+      "left_application_bps": 45723.92156862745,
+      "left_packet_fill": 0.9865470852017937,
+      "name": "A3_dictionary_vs_A0",
+      "note": "Software-encoded comparison. The A3 application rate counts pre-compression bytes; its wire payload rate is much lower.",
+      "right": "A0_reference",
+      "right_application_bps": 99.45098039215686,
+      "right_packet_fill": 0.11985324092947411
+    },
+    {
+      "application_ratio": 2.0,
+      "left": "A1_fill_adaptive",
+      "left_application_bps": 759.5294117647059,
+      "left_packet_fill": 0.9869547492865879,
+      "name": "A1_adaptive_vs_A4_always_on",
+      "note": "Same 2,421-byte payload. A4 always-on compression grows the wire payload to 2,450 bytes and needs two packets.",
+      "right": "A4_always_on",
+      "right_application_bps": 379.7647058823529,
+      "right_packet_fill": 0.4993885038728088
+    },
+    {
+      "application_ratio": 1.043370508054523,
+      "left": "A5_rs24",
+      "left_application_bps": 792.4705882352941,
+      "left_packet_fill": 0.9940968122786304,
+      "name": "A5_rs24_vs_A1_rs32",
+      "note": "A5 carries 105 more payload bytes in the same 255 frames (88 from RS parity, 17 from the compact header).",
+      "right": "A1_fill_adaptive",
+      "right_application_bps": 759.5294117647059,
+      "right_packet_fill": 0.9869547492865879
+    },
+    {
+      "application_ratio": 4.0,
+      "left": "A2_bundle",
+      "left_application_bps": 715.2941176470588,
+      "name": "A2_bundle_vs_four_separate_packets",
+      "note": "The original model sends one logical payload per packet. A bundle amortises one 255-frame packet across four files.",
+      "right": "four separate 255-frame packets",
+      "right_application_bps": 178.8235294117647
+    }
+  ],
+  "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+  "measured_vs_projection": {
+    "measured": [
+      "software packet/RS/container round-trips and SHA-256 matches",
+      "physical application throughput and packet fill for locked m11-* sessions",
+      "physical erasures, corrections and packet success"
+    ],
+    "note": "Software rows are exact protocol round-trips at a stated 10 fps; they are not camera measurements. Physical rows use the observed display period and a SHA-verified payload.",
+    "projection_label": "PROJECTION \u2014 not measured",
+    "projections": [
+      "60 fps rates",
+      "rates for arms without a physical session"
+    ]
+  },
+  "physical_sessions": [
+    {
+      "application_bps": 99.44103628852598,
+      "application_bytes_per_frame": 1.2431372549019608,
+      "application_share_of_channel": 0.08287581699346405,
+      "arm_id": "A0_reference",
+      "corrected_symbols": 8,
+      "display_fps": 9.999000099989797,
+      "dominant_loss": "unused_packet_padding",
+      "erased_frames": 8,
+      "frame_delivery_rate": 0.9686274509803922,
+      "frames": 255,
+      "packet_fill_incl_header": 0.13289849164288625,
+      "packet_fill_payload": 0.11985324092947411,
+      "payload_success": true,
+      "residual_bps": 0.0,
+      "rs_erasure_margin": 24,
+      "rs_nsym": 32,
+      "session_id": "m11-a0-reference-20261108T122331Z",
+      "status": "ok",
+      "unique_frames": 247,
+      "wire_payload_bps": 92.22607151049412
+    },
+    {
+      "arm_id": "A1_fill_adaptive",
+      "expected_frames": 255,
+      "payload_success": false,
+      "problems": null,
+      "reason": "payload verification failed",
+      "session_id": "m11-a1-fill-adaptive-20261108T122602Z",
+      "status": "failed",
+      "unique_frames": 6
+    },
+    {
+      "application_bps": 759.4534664180485,
+      "application_bytes_per_frame": 9.494117647058824,
+      "application_share_of_channel": 0.6329411764705881,
+      "arm_id": "A1_fill_adaptive",
+      "corrected_symbols": 66,
+      "display_fps": 9.999000099989797,
+      "dominant_loss": "framing_header_and_crc",
+      "erased_frames": 6,
+      "frame_delivery_rate": 0.9764705882352941,
+      "frames": 255,
+      "packet_fill_incl_header": 1.0,
+      "packet_fill_payload": 0.9869547492865879,
+      "payload_success": true,
+      "residual_bps": 2.2737367544323206e-13,
+      "rs_erasure_margin": 26,
+      "rs_nsym": 32,
+      "session_id": "m11-a1-fill-adaptive-20261108T122956Z",
+      "status": "ok",
+      "unique_frames": 249,
+      "wire_payload_bps": 759.4534664180485
+    },
+    {
+      "application_bps": 715.2225953875054,
+      "application_bytes_per_frame": 8.941176470588236,
+      "application_share_of_channel": 0.5960784313725489,
+      "arm_id": "A2_bundle",
+      "corrected_symbols": 77,
+      "display_fps": 9.999000099989797,
+      "dominant_loss": "framing_header_and_crc",
+      "erased_frames": 7,
+      "frame_delivery_rate": 0.9725490196078431,
+      "frames": 255,
+      "packet_fill_incl_header": 0.968609865470852,
+      "packet_fill_payload": 0.9624949041989401,
+      "payload_success": true,
+      "residual_bps": 0.0,
+      "rs_erasure_margin": 25,
+      "rs_nsym": 32,
+      "session_id": "m11-a2-bundle-20261108T123222Z",
+      "status": "ok",
+      "unique_frames": 248,
+      "wire_payload_bps": 740.6318191710089
+    },
+    {
+      "application_bps": 45705.63931290227,
+      "application_bytes_per_frame": 571.5490196078431,
+      "application_share_of_channel": 38.103267973856205,
+      "arm_id": "A3_dictionary",
+      "corrected_symbols": 0,
+      "display_fps": 9.996001599360252,
+      "dominant_loss": "framing_header_and_crc",
+      "erased_frames": 0,
+      "frame_delivery_rate": 1.0,
+      "frames": 255,
+      "packet_fill_incl_header": 0.9995923359152059,
+      "packet_fill_payload": 0.9865470852017937,
+      "payload_success": true,
+      "residual_bps": 2.5011104298755527e-12,
+      "rs_erasure_margin": 32,
+      "rs_nsym": 32,
+      "session_id": "m11-a3-dictionary-20261108T123444Z",
+      "status": "ok",
+      "unique_frames": 255,
+      "wire_payload_bps": 758.9121214259391
+    },
+    {
+      "application_bps": 792.3913491003678,
+      "application_bytes_per_frame": 9.905882352941177,
+      "application_share_of_channel": 0.660392156862745,
+      "arm_id": "A5_rs24",
+      "corrected_symbols": 110,
+      "display_fps": 9.999000099989797,
+      "dominant_loss": "framing_header_and_crc",
+      "erased_frames": 10,
+      "frame_delivery_rate": 0.9607843137254902,
+      "frames": 255,
+      "packet_fill_incl_header": 1.0,
+      "packet_fill_payload": 0.9940968122786304,
+      "payload_success": true,
+      "residual_bps": 2.2737367544323206e-13,
+      "rs_erasure_margin": 14,
+      "rs_nsym": 24,
+      "session_id": "m11-a5-rs24-20261108T123758Z",
+      "status": "ok",
+      "unique_frames": 245,
+      "wire_payload_bps": 792.3913491003678
+    }
+  ],
+  "reference": {
+    "application_bps": 99.44103628852598,
+    "application_bytes_per_frame": 1.2431372549019608,
+    "display_fps": 9.999000099989797,
+    "packet_fill_wire": 0.11985324092947411,
+    "session_id": "m9-iphone14-2-packet-20261108T104529Z",
+    "source": "E12 reference session",
+    "verified": true
+  },
+  "reliability": {
+    "capacity_table": [
+      {
+        "block_data_bytes": 239,
+        "capacity_vs_nsym32": 0.0717488789237668,
+        "correctable_erasures": 16,
+        "correctable_errors": 8,
+        "max_payload_compact": 42049,
+        "nsym": 16,
+        "packet0_compact": 2614,
+        "packet0_m9": 2597,
+        "packet_data_bytes": 2629
+      },
+      {
+        "block_data_bytes": 231,
+        "capacity_vs_nsym32": 0.03587443946188351,
+        "correctable_erasures": 24,
+        "correctable_errors": 12,
+        "max_payload_compact": 40641,
+        "nsym": 24,
+        "packet0_compact": 2526,
+        "packet0_m9": 2509,
+        "packet_data_bytes": 2541
+      },
+      {
+        "block_data_bytes": 223,
+        "capacity_vs_nsym32": 0.0,
+        "correctable_erasures": 32,
+        "correctable_errors": 16,
+        "max_payload_compact": 39233,
+        "nsym": 32,
+        "packet0_compact": 2438,
+        "packet0_m9": 2421,
+        "packet_data_bytes": 2453
+      }
+    ],
+    "note": "nsym is the number of correctable erasures per RS block. The frozen M10 baseline needed at most 9 erasures, so nsym=24 keeps 15 erasures of measured headroom and nsym=16 keeps 7. Reliability is only claimed for arms whose payload SHA-256 matched.",
+    "physical": [
+      {
+        "arm_id": "A0_reference",
+        "corrected_symbols": 8,
+        "erased_frames": 8,
+        "packets_expected": 1,
+        "packets_received": 1,
+        "payload_success": true,
+        "rs_erasure_margin": 24,
+        "rs_nsym": 32,
+        "session_id": "m11-a0-reference-20261108T122331Z"
+      },
+      {
+        "arm_id": "A1_fill_adaptive",
+        "corrected_symbols": 66,
+        "erased_frames": 6,
+        "packets_expected": 1,
+        "packets_received": 1,
+        "payload_success": true,
+        "rs_erasure_margin": 26,
+        "rs_nsym": 32,
+        "session_id": "m11-a1-fill-adaptive-20261108T122956Z"
+      },
+      {
+        "arm_id": "A2_bundle",
+        "corrected_symbols": 77,
+        "erased_frames": 7,
+        "packets_expected": 1,
+        "packets_received": 1,
+        "payload_success": true,
+        "rs_erasure_margin": 25,
+        "rs_nsym": 32,
+        "session_id": "m11-a2-bundle-20261108T123222Z"
+      },
+      {
+        "arm_id": "A3_dictionary",
+        "corrected_symbols": 0,
+        "erased_frames": 0,
+        "packets_expected": 1,
+        "packets_received": 1,
+        "payload_success": true,
+        "rs_erasure_margin": 32,
+        "rs_nsym": 32,
+        "session_id": "m11-a3-dictionary-20261108T123444Z"
+      },
+      {
+        "arm_id": "A5_rs24",
+        "corrected_symbols": 110,
+        "erased_frames": 10,
+        "packets_expected": 1,
+        "packets_received": 1,
+        "payload_success": true,
+        "rs_erasure_margin": 14,
+        "rs_nsym": 24,
+        "session_id": "m11-a5-rs24-20261108T123758Z"
+      }
+    ],
+    "reference_nsym": 32,
+    "reference_worst_erased_frames": 9
+  },
+  "root_cause": {
+    "explanation": "The packet is always 255 frames x 11 bytes = 2,453 RS data bytes. The frozen payload is only 317 application bytes (294 wire bytes after OTL1), so 2,159 of the 2,453 data bytes are zero padding. 11.99% is unused capacity, not loss: the packet is shorter than its container, and the padding is still RS-encoded and transmitted.",
+    "frame_payload_bytes": 11,
+    "frozen_application_bytes": 317,
+    "frozen_application_bytes_per_frame": 1.2431372549019608,
+    "frozen_application_packet_fill": 0.1292295148797391,
+    "frozen_packet0_payload_capacity": 2421,
+    "frozen_packet_data_bytes": 2453,
+    "frozen_wire_bytes": 294,
+    "frozen_wire_packet_fill": 0.11985324092947411
+  },
+  "software_arms": [
+    {
+      "application_bps_at_10fps": 99.45098039215686,
+      "application_bytes": 317,
+      "application_bytes_per_frame": 1.2431372549019608,
+      "application_sha256": "829a6e465f0be0a8ae2e5eee9adb783d84591f2bf1813a20153946edce9cab2d",
+      "arm_id": "A0_reference",
+      "bundle_ok": null,
+      "compressed": true,
+      "dominant_loss": "unused_packet_padding",
+      "frames": 255,
+      "header_bytes": 32,
+      "header_kind": "m9-32",
+      "nsym": 32,
+      "packet_fill_incl_header": 0.13289849164288625,
+      "packet_fill_payload": 0.11985324092947411,
+      "payload_success": true,
+      "residual_bps": 2.2737367544323206e-13,
+      "status": "ok",
+      "title": "Frozen M9 reference",
+      "total_packets": 1,
+      "wire_bytes": 294
+    },
+    {
+      "application_bps_at_10fps": 759.5294117647059,
+      "application_bytes": 2421,
+      "application_bytes_per_frame": 9.494117647058824,
+      "application_sha256": "849a239d9fcc4fd5b1be2ad6bd844defb2b0f17ef767a4c12db0cc9def80ce16",
+      "arm_id": "A1_fill_adaptive",
+      "bundle_ok": null,
+      "compressed": false,
+      "dominant_loss": "framing_header_and_crc",
+      "frames": 255,
+      "header_bytes": 32,
+      "header_kind": "m9-32",
+      "nsym": 32,
+      "packet_fill_incl_header": 1.0,
+      "packet_fill_payload": 0.9869547492865879,
+      "payload_success": true,
+      "residual_bps": 0.0,
+      "status": "ok",
+      "title": "Full packet with adaptive raw",
+      "total_packets": 1,
+      "wire_bytes": 2421
+    },
+    {
+      "application_bps_at_10fps": 715.2941176470588,
+      "application_bytes": 2280,
+      "application_bytes_per_frame": 8.941176470588236,
+      "application_sha256": "b24de2fc44348d0f19edc416b0988feeac3f72c3d8ca33155d1efdffabbbfe2f",
+      "arm_id": "A2_bundle",
+      "bundle_ok": true,
+      "compressed": false,
+      "dominant_loss": "framing_header_and_crc",
+      "frames": 255,
+      "header_bytes": 15,
+      "header_kind": "compact15",
+      "nsym": 32,
+      "packet_fill_incl_header": 0.968609865470852,
+      "packet_fill_payload": 0.9624949041989401,
+      "payload_success": true,
+      "residual_bps": 0.0,
+      "status": "ok",
+      "title": "Four logical payloads in one packet",
+      "total_packets": 1,
+      "wire_bytes": 2361
+    },
+    {
+      "application_bps_at_10fps": 45723.92156862745,
+      "application_bytes": 145745,
+      "application_bytes_per_frame": 571.5490196078431,
+      "application_sha256": "440f601d2def589af0a8f8669d86f416d522a94d30f7233109a21bfd3818d2f9",
+      "arm_id": "A3_dictionary",
+      "bundle_ok": null,
+      "compressed": true,
+      "dominant_loss": "framing_header_and_crc",
+      "frames": 255,
+      "header_bytes": 32,
+      "header_kind": "m9-32",
+      "nsym": 32,
+      "packet_fill_incl_header": 0.9995923359152059,
+      "packet_fill_payload": 0.9865470852017937,
+      "payload_success": true,
+      "residual_bps": 7.275957614183426e-12,
+      "status": "ok",
+      "title": "Dictionary replaces repeated instructions",
+      "total_packets": 1,
+      "wire_bytes": 2420
+    },
+    {
+      "application_bps_at_10fps": 379.7647058823529,
+      "application_bytes": 2421,
+      "application_bytes_per_frame": 4.747058823529412,
+      "application_sha256": "849a239d9fcc4fd5b1be2ad6bd844defb2b0f17ef767a4c12db0cc9def80ce16",
+      "arm_id": "A4_always_on",
+      "bundle_ok": null,
+      "compressed": true,
+      "dominant_loss": "unused_packet_padding",
+      "frames": 510,
+      "header_bytes": 32,
+      "header_kind": "m9-32",
+      "nsym": 32,
+      "packet_fill_incl_header": 0.5059111292295149,
+      "packet_fill_payload": 0.4993885038728088,
+      "payload_success": true,
+      "residual_bps": 0.0,
+      "status": "ok",
+      "title": "Always-on compression control",
+      "total_packets": 2,
+      "wire_bytes": 2450
+    },
+    {
+      "application_bps_at_10fps": 792.4705882352941,
+      "application_bytes": 2526,
+      "application_bytes_per_frame": 9.905882352941177,
+      "application_sha256": "d4c6a31d86bc457cb05ba10b3eaf0607927d939ab01a0b9bb95ff1e59d24b772",
+      "arm_id": "A5_rs24",
+      "bundle_ok": null,
+      "compressed": false,
+      "dominant_loss": "framing_header_and_crc",
+      "frames": 255,
+      "header_bytes": 15,
+      "header_kind": "compact15",
+      "nsym": 24,
+      "packet_fill_incl_header": 1.0,
+      "packet_fill_payload": 0.9940968122786304,
+      "payload_success": true,
+      "residual_bps": -2.2737367544323206e-13,
+      "status": "ok",
+      "title": "RS(255,231) with nsym=24",
+      "total_packets": 1,
+      "wire_bytes": 2526
+    }
+  ],
+  "status": "MEASURED PHYSICAL M11 SESSIONS"
+}
+```
+
+Raw measurements: `raw/trials.jsonl` (one JSON object per trial).
+Tabular metrics: `processed/summary.csv`.
+
+## Failures
+
+- None recorded.
+
+## Conclusion
+
+PHYSICAL / CAMERA CAPTURE. E13 analysed 5 successful locked M11 session(s). The frozen 317-byte transfer uses 11.99% of the 2453-byte packet data region; the rest is zero padding. The highest measured wire-limited application throughput was 792.39 bps in m11-a5-rs24-20261108T123758Z (A5_rs24), a 7.97x gain over the frozen 99.44 bps. The dictionary arm recovered 145,745 application bytes in one packet at 45705.64 bps of pre-compression application bytes (its wire payload rate is 758.91 bps); the higher application figure is compression gain, not extra wire capacity. Arms without a successful physical session: A4_always_on. Every successful arm matched its SHA-256 manifest; erasures and RS corrections are reported per session. Software arms that have no locked physical session are not promoted to measurements.
+
+## Reproduction
+
+```bash
+cd /Users/arshbuttar/OPTICAL_TRANSMISSION_LAB
+python3 -m experiments.run_all --only E13_packet_utilisation
+```
+
+The run directory is immutable; re-running creates a new run id.
+
+## Environment
+
+```json
+{
+  "cpu_count": 10,
+  "device": {
+    "camera": {
+      "exposure": "auto",
+      "focus": "auto (Continuity Camera)",
+      "format": "H.264 MP4 via AVFoundation",
+      "fps": 30.0,
+      "iso": "auto",
+      "mode": "video",
+      "notes": "Safari window {250,120,700,700} points; player.html?fps=10; A0_reference",
+      "resolution": "1920x1440",
+      "stabilization": "not instrumented (Continuity Camera)",
+      "zoom": "1x (camera default; not independently measured)"
+    },
+    "display": {
+      "brightness": "fraction 0.354058 of controller range (0..1); not nits",
+      "height_px": 1664,
+      "kind": "computer",
+      "model": "Apple M5 built-in Liquid Retina (MacBook Air)",
+      "notes": "brightness held at the M10 restored fraction",
+      "refresh_hz": 60.0,
+      "width_px": 2560
+    },
+    "model": "iPhone14,2 (Continuity Camera, 'Arsh Camera')",
+    "notes": "",
+    "os": "iOS (Continuity Camera via macOS)",
+    "serial": ""
+  },
+  "evidence_source": "PHYSICAL / CAMERA CAPTURE",
+  "machine": "arm64",
+  "numpy": "2.4.4",
+  "opencv": "4.13.0",
+  "otl_version": "0.1.0",
+  "pillow": "12.2.0",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "processor": "arm",
+  "pytest": "9.0.3",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "simulation_only": false,
+  "timestamp_utc": "2026-11-08T13:05:38.077626+00:00",
+  "zstandard": "0.25.0"
+}
+```
